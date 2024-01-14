@@ -22,3 +22,4 @@ sources:
       - name: repository_db_item2bundle
       - name: repository_db_metadatafieldregistry
       - name: repository_db_metadataschemaregistry
+      - name: repository_db_metadatavalue

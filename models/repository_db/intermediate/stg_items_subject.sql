@@ -1,5 +1,5 @@
 with base as (
-    {{ select_metadatavalue('subject', 'sedici', 'subject', 'materia')}}
+    {{ select_metadatavalue('subject', 'sedici', 'subject', 'materias', True)}}
 ),
 
 final as (

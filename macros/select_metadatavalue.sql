@@ -1,7 +1,11 @@
-{% macro select_metadatavalue(column_name, short_id, element, qualifier = NULL) %}
+{% macro select_metadatavalue(column_name, short_id, element, qualifier = NULL, authority = False ) %}
     SELECT 
         mv.resource_id AS item_id,
         mv.text_value AS {{ column_name }}
+        {% if authority %}
+            , mv.authority
+        {% endif %}
+
     FROM {{ source('repository_db', 'repository_db_metadatavalue') }} mv
     INNER JOIN {{ source('repository_db', 'repository_db_metadatafieldregistry') }} mfr ON mfr.metadata_field_id = mv.metadata_field_id
     INNER JOIN {{ source('repository_db', 'repository_db_metadataschemaregistry') }} msr ON msr.metadata_schema_id = mfr.metadata_schema_id

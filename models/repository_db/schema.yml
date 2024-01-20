@@ -17,6 +17,7 @@ sources:
       - name: repository_db_community2collection
       - name: repository_db_community2community
       - name: repository_db_community2item
+      - name: repository_db_handle
       - name: repository_db_doi
       - name: repository_db_item
       - name: repository_db_item2bundle

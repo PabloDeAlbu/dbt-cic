@@ -4,7 +4,7 @@ WITH base AS (
     SELECT 
         person_name, 
         person_internal_identifier as internal_identifier
-    FROM {{ ref('stg_publication_person') }}
+    FROM {{ ref('publication_person') }}
     ORDER BY person_name, internal_identifier
 ),
 

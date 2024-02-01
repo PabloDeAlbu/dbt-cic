@@ -3,7 +3,7 @@
 WITH base AS (
     SELECT 
         *
-    FROM {{ ref('stg_person') }}
+    FROM {{ ref('person') }}
     -- ORDER BY orgunit_name, internal_identifier
 ),
 

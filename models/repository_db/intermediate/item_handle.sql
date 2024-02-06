@@ -1,7 +1,7 @@
 with base as (
     SELECT item_id, h.handle
-    FROM {{ source('repository_db', 'repository_db_item') }} i
-    INNER JOIN {{ source('repository_db', 'repository_db_handle') }} h ON i.item_id = h.resource_id
+    FROM {{ source('repository_db', 'item') }} i
+    INNER JOIN {{ source('repository_db', 'handle') }} h ON i.item_id = h.resource_id
     WHERE h.resource_type_id = 2
 ),
 

@@ -4,7 +4,7 @@ WITH item AS (
     SELECT 
         item_id, 
         last_modified 
-    FROM {{ source('repository_db', 'repository_db_item') }}
+    FROM {{ source('repository_db', 'item') }}
     WHERE withdrawn = false and in_archive = true and discoverable = true
 ),
 

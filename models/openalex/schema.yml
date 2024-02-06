@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: openalex
+    description: 'Openalex 2023 works'
+    database: staging
+    tables:
+      - name: _airbyte_raw_works_2023

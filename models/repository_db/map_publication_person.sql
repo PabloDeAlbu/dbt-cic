@@ -27,7 +27,7 @@ final as (
         authority as person_internal_identifier,
         role
     FROM items_person ip
-    INNER JOIN {{ ref('publication') }} p ON p.item_id = ip.item_id
+    INNER JOIN {{ ref('fact_publication') }} p ON p.item_id = ip.item_id
 )
 
 select * from final

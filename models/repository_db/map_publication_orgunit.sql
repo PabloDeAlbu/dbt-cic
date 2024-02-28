@@ -8,7 +8,7 @@ final as (
     SELECT 
         o.*
     FROM items_orgunit o
-    INNER JOIN {{ ref('publication') }} p ON p.item_id = o.item_id
+    INNER JOIN {{ ref('fact_publication') }} p ON p.item_id = o.item_id
 )
 
 select * from final

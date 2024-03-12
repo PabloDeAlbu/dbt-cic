@@ -1,6 +1,6 @@
 with base as (
-    SELECT map.orgunit_name, map.community_handle, c2i.item_id
-    FROM {{ ref('map_community_ua') }} map
+    SELECT c2i.item_id, map.orgunit_name, map.community_handle
+    FROM {{ ref('community_unidadacademica') }} map
     INNER JOIN {{ source('repository_db','community2item') }} c2i ON c2i.community_id = map.community_id
 ),
 

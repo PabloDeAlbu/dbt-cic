@@ -39,3 +39,7 @@ models:
     openalex:
       +materialized: "table"
       +schema: openalex
+
+seeds:
+  repository_db:
+    schema: repository_db

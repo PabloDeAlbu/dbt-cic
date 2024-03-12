@@ -4,6 +4,7 @@ sources:
   - name: repository_db
     description: 'DSpace database'
     database: staging
+    schema: ldg_repository_db
     tables:
       - name: bitstream
       - name: bundle

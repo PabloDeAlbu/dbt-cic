@@ -23,11 +23,13 @@ with items_person as (
 final as (
     SELECT 
         ip.item_id as publication_internal_identifier,
+        p.handle as publication_handle,
         codirector_name as person_name,
-        authority as person_internal_identifier,
-        role
+        role,
+        authority as person_internal_identifier
     FROM items_person ip
     INNER JOIN {{ ref('publication') }} p ON p.item_id = ip.item_id
+    WHERE p.handle is not null
 )
 
 select * from final

@@ -34,10 +34,10 @@ models:
   # Config indicated by + and applies to all files under models/example/
   dbt_unlp:
     repository_db:
-      +materialized: "table"
+      +materialized: "view"
       +schema: repository_db
     openalex:
-      +materialized: "table"
+      +materialized: "view"
       +schema: openalex
 
 seeds:

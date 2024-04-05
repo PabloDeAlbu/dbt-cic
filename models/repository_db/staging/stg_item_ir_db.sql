@@ -1,16 +1,16 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "orgunit"
+source_model: "raw_item_ir_db"
 derived_columns:
   source: "!REPOSITORY_DB"
-  load_datetime: available_date
-  effective_from: publication_date
-  start_date: publication_date
+  load_datetime: now()
+  effective_from: now()
+  start_date: now()
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  publication_hk: handle
-  publication_hashdiff:
+  item_id_hk: item_id
+  item_hashdiff:
     is_hashdiff: true
     columns:
       - title

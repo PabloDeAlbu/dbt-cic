@@ -1,9 +1,9 @@
 {{ config(materialized='incremental')    }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_publication'
-src_pk: publication_hk
-src_nk: handle
+source_model: 'stg_orgunit'
+src_pk: orgunit_hk
+src_nk: orgunit_internal_identifier
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}

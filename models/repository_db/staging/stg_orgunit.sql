@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "publication"
+source_model: "orgunit"
 derived_columns:
   source: "!REPOSITORY_DB"
   load_datetime: available_date
@@ -9,17 +9,11 @@ derived_columns:
   start_date: publication_date
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  publication_hk: handle
-  publication_hashdiff:
+  orgunit_hk: orgunit_internal_identifier
+  orgunit_hashdiff:
     is_hashdiff: true
     columns:
-      - title
-      - type
-      - subtype
-      - language
-      - partof
-      - subtitle
-      - volume
+      - orgunit_name
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

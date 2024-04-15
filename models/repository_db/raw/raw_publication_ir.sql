@@ -10,21 +10,23 @@ WITH item AS (
 
 final AS (
     SELECT 
-        item.*, 
-        {{ dbt_utils.star(from=ref('raw_item_title'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_type'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_subtype'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_handle'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_doi'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_available_date'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_created_date'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_exposure_date'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_language'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_license_uri'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_partof'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_publication_date'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_subtitle'), except=['item_id']) }},
-        {{ dbt_utils.star(from=ref('raw_item_volume'), except=['item_id']) }}
+        item.item_id as internal_identifier,
+        type.type as type,
+        -- TODO Mapear subtype a COAR y renombar a type
+        subtype.subtype as subtype,
+        language.language as language,
+        title.title as title,
+        subtitle.subtitle as subtitle,
+        handle.handle as handle,
+        doi.doi as doi,
+        available_date.available_date as available_date,
+        created_date.created_date as created_date,
+        exposure_date.exposure_date as exposure_date,
+        license_uri.license_uri as license_uri,
+        partof.partof as partof,
+        publication_date.publication_date as publication_date,
+        volume.volume as volume,
+        item.last_modified        
     FROM item
     LEFT JOIN {{ref('raw_item_title')}} AS title ON item.item_id  = title.item_id
     LEFT JOIN {{ref('raw_item_subtitle')}} AS subtitle ON item.item_id = subtitle.item_id

@@ -1,19 +1,33 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "orgunit"
+source_model: "raw_publication_ir"
 derived_columns:
   source: "!REPOSITORY_DB"
-  load_datetime: available_date
-  effective_from: publication_date
-  start_date: publication_date
+  load_datetime: now()
+  effective_from: now()
+  start_date: now()
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  orgunit_hk: orgunit_internal_identifier
-  orgunit_hashdiff:
+  publication_hk: internal_identifier
+  handle_hk: handle
+  doi_hk: doi
+  publication_hashdiff:
     is_hashdiff: true
     columns:
-      - orgunit_name
+      - title
+      - type
+      - subtype
+      - available_date
+      - created_date
+      - exposure_date
+      - language
+      - license_uri
+      - partof
+      - publication_date
+      - subtitle
+      - volume
+      - last_modified
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

@@ -1,19 +1,25 @@
 {# {{ config(materialized='incremental') }} #}
 
 {%- set yaml_metadata -%}
-source_model: "stg_item_ir_db"
-src_pk: "item_id_hk"
+source_model: "stg_publication_ir"
+src_pk: "publication_hk"
 src_hashdiff: 
-  source_column: "item_hashdiff"
+  source_column: "publication_hashdiff"
   alias: "hashdiff"
 src_payload:
-  - title
-  - type
-  - subtype
-  - language
-  - partof
-  - subtitle
-  - volume
+    - title
+    - type
+    - subtype
+    - available_date
+    - created_date
+    - exposure_date
+    - language
+    - license_uri
+    - partof
+    - publication_date
+    - subtitle
+    - volume
+    - last_modified
 src_eff: "effective_from"
 src_ldts: "load_datetime"
 src_source: "source"

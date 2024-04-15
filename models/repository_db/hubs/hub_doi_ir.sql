@@ -1,9 +1,9 @@
 {# {{ config(materialized='incremental') }} #}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_item_ir_db'
-src_pk: item_id_hk
-src_nk: item_id
+source_model: 'stg_publication_ir'
+src_pk: doi_hk
+src_nk: doi
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}
@@ -20,7 +20,7 @@ with base as (
 final as (
     select * 
     from base
-    where item_id is not null
+    where doi is not null
 )
 
 select * from final

@@ -1,8 +1,8 @@
-{{ config(materialized='incremental') }}
+{# {{ config(materialized='incremental') }} #}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_item_ir_db'
-src_pk: item_id_hk
+source_model: 'stg_publication_ir'
+src_pk: handle_hk
 src_nk: handle
 src_ldts: load_datetime
 src_source: source

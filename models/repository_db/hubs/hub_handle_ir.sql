@@ -1,4 +1,4 @@
-{# {{ config(materialized='incremental') }} #}
+{{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
 source_model: 'stg_publication_ir'
@@ -8,8 +8,8 @@ src_ldts: load_datetime
 src_source: source
 {%- endset -%}
 
+{% set metadata_dict = fromyaml(yaml_metadata) %}
 with base as (
-    {% set metadata_dict = fromyaml(yaml_metadata) %}
     {{ automate_dv.hub(src_pk=metadata_dict["src_pk"],
                     src_nk=metadata_dict["src_nk"], 
                     src_ldts=metadata_dict["src_ldts"],

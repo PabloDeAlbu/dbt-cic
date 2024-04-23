@@ -1,4 +1,4 @@
-{# {{ config(materialized='incremental') }} #}
+{{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
 source_model: 'stg_publication_ir'

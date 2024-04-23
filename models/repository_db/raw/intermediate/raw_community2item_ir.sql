@@ -1,5 +1,3 @@
-{{ config(materialized = "table") }}
-
 WITH base AS (
     SELECT 
         item_id,

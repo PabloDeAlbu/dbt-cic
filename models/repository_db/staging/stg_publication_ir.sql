@@ -1,12 +1,12 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "raw_publication_ir"
+source_model: "typed_publication_ir"
 derived_columns:
   source: "!REPOSITORY_DB"
-  load_datetime: now()
-  effective_from: now()
-  start_date: now()
+  load_datetime: _airbyte_extracted_at
+  effective_from: available_date
+  start_date: _airbyte_extracted_at
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
   publication_hk: internal_identifier

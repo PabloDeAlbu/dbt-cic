@@ -2,7 +2,8 @@ version: 2
 
 sources:
   - name: openalex
-    description: 'Openalex 2023 works'
+    description: 'Openalex works'
     database: staging
+    schema: ldg_openalex
     tables:
-      - name: _airbyte_raw_works_2023
+      - name: openalex_works_unlp

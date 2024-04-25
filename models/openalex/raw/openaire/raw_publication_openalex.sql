@@ -1,38 +1,37 @@
 {{ config(materialized='view') }}
 
 with base as (
-    SELECT     
+    SELECT 
         id,
-        doi,
-        ids,
-        mesh,
         type,
+        language,
         title,
-        biblio,
-        grants,
+        locations,
+        publication_date,
+        biblio->>'issue' as issue,
+        biblio->>'volume' as volume,
+        biblio->>'first_page' as first_page,
+        biblio->>'end_page' as end_page,
+        doi,
+        ids->>'mag' as mag,
+        ids->>'pmid' as pmid,
+        ids->>'pmcid' as pmcid,
+        authorships,
         topics,
+        concepts,
+        grants,
         apc_list,
         apc_paid,
-        concepts,
-        keywords,
-        language,
-        locations,
         indexed_in,
-        authorships,
         is_paratext,
         open_access,
         display_name,
         has_fulltext,
         is_retracted,
-        primary_topic,
         related_works,
         type_crossref,
         cited_by_count,
         locations_count,
-        best_oa_location,
-        primary_location,
-        publication_date,
-        publication_year,
         referenced_works,
         _ab_source_file_url,
         is_authors_truncated,
@@ -44,11 +43,10 @@ with base as (
         _ab_source_file_last_modified,
         corresponding_institution_ids,
         sustainable_development_goals,
-        _airbyte_raw_id,
-        _airbyte_extracted_at,
-        _airbyte_meta
+        best_oa_location,
+        _airbyte_extracted_at
     FROM 
-         {{ source('openalex', 'openalex_works_unlp') }} works
+         {{ ref('raw_work_openalex') }}
 ),
 
 final as (

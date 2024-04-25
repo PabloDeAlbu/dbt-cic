@@ -1,15 +1,15 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_publication_openalex'
-src_pk: doi_hk
-src_nk: doi
+source_model: 'stg_work_openalex'
+src_pk: work_hk
+src_nk: work_id
 src_ldts: _airbyte_extracted_at
 src_source: source
 {%- endset -%}
 
-{% set metadata_dict = fromyaml(yaml_metadata) %}
 with base as (
+    {% set metadata_dict = fromyaml(yaml_metadata) %}
     {{ automate_dv.hub(src_pk=metadata_dict["src_pk"],
                     src_nk=metadata_dict["src_nk"], 
                     src_ldts=metadata_dict["src_ldts"],
@@ -20,7 +20,7 @@ with base as (
 final as (
     select * 
     from base
-    where doi is not null
+    where work_id is not null
 )
 
 select * from final

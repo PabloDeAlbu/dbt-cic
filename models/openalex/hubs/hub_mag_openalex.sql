@@ -1,7 +1,7 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_publication_openalex'
+source_model: 'stg_work_openalex'
 src_pk: mag_hk
 src_nk: mag
 src_ldts: _airbyte_extracted_at

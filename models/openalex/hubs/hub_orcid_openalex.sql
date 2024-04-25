@@ -1,9 +1,9 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_publication_openalex'
-src_pk: pmid_hk
-src_nk: pmid
+source_model: 'stg_dehydrated_author_openalex'
+src_pk: author_hk
+src_nk: orcid
 src_ldts: _airbyte_extracted_at
 src_source: source
 {%- endset -%}
@@ -20,7 +20,7 @@ with base as (
 final as (
     select * 
     from base
-    where pmid is not null
+    where orcid is not null
 )
 
 select * from final

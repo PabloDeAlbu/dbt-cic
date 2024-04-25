@@ -1,24 +1,23 @@
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 with base as (
     SELECT 
-        -- begin https://openaire-guidelines-for-cris-managers.readthedocs.io/en/v1.2.0/cerif_xml_publication_entity.html#
-        id as internal_identifier,
+        id,
         type,
         language,
         title,
-        locations as published_in,
-        publication_date,
+        locations,
+        {{str_to_date('publication_date')}} as publication_date,
         biblio->>'issue' as issue,
         biblio->>'volume' as volume,
-        biblio->>'first_page' as start_page,
+        biblio->>'first_page' as first_page,
         biblio->>'end_page' as end_page,
-        doi as doi,
+        doi,
         ids->>'mag' as mag,
         ids->>'pmid' as pmid,
         ids->>'pmcid' as pmcid,
-        authorships as authors,
-        topics as subject,
+        authorships,
+        topics,
         -- end openaire-guidelines properties
         concepts,
         grants,
@@ -46,11 +45,9 @@ with base as (
         corresponding_institution_ids,
         sustainable_development_goals,
         best_oa_location,
-        -- no existe https://docs.openalex.org/api-entities/works/work-object#created_date
-        -- no existe https://docs.openalex.org/api-entities/works/work-object#license
         _airbyte_extracted_at
     FROM 
-         {{ ref('raw_works_openalex') }}
+         {{ ref('raw_publication_openalex') }}
 ),
 
 final as (

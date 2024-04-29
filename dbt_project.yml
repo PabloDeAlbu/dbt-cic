@@ -33,13 +33,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   # Config indicated by + and applies to all files under models/example/
   dbt_unlp:
-    repository_db:
+    ir:
       +materialized: "view"
-      +schema: repository_db
+      +schema: ir
     openalex:
       +materialized: "view"
       +schema: openalex
 
 seeds:
-  repository_db:
-    schema: repository_db
+  ir:
+    schema: ir

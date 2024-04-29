@@ -1,0 +1,77 @@
+label,metadata,is_publication,is_person,is_orgunit,type,authority,schema,element,qualifier
+Fecha de creacion en Dspace,dc.date.accessioned,TRUE,FALSE,FALSE,date,FALSE,dc,date,accessioned
+Fecha de disponibilidad en Dspace,dc.date.available,TRUE,FALSE,FALSE,date,FALSE,dc,date,available
+Fecha de creación,dc.date.created,TRUE,FALSE,FALSE,date,FALSE,dc,date,created
+Fecha de creación,dc.date.created,TRUE,FALSE,FALSE,date,FALSE,dc,date,created
+Fecha de publicación,dc.date.issued,TRUE,FALSE,FALSE,date,FALSE,dc,date,issued
+Resumen,dc.description.abstract,TRUE,FALSE,FALSE,string,FALSE,dc,description,abstract
+Registro de Origen,dc.description.provenance,TRUE,FALSE,FALSE,string,FALSE,dc,description,provenance
+Descripción Física,dc.format,TRUE,FALSE,FALSE,string,FALSE,dc,format,
+Descripción Física,dc.format,TRUE,FALSE,FALSE,string,FALSE,dc,format,
+Extensión/Dimensiones,dc.format.extent,TRUE,FALSE,FALSE,string,FALSE,dc,format,extent
+Materiales/Técnicas,dc.format.medium,TRUE,FALSE,FALSE,string,FALSE,dc,format,medium
+Materiales/Técnicas,dc.format.medium,TRUE,FALSE,FALSE,string,FALSE,dc,format,medium
+HANDLE (DSPACE),dc.identifier.uri,TRUE,FALSE,TRUE,string,FALSE,dc,identifier,uri
+Idioma,dc.language,TRUE,FALSE,FALSE,string,FALSE,dc,language,
+Editorial,dc.publisher,FALSE,FALSE,TRUE,string,FALSE,dc,publisher,
+Titulo de la serie o colección,dc.relation.ispartof,TRUE,FALSE,FALSE,string,FALSE,dc,relation,ispartof
+Descriptor,dc.subject,TRUE,FALSE,FALSE,string,FALSE,dc,subject,
+Título,dc.title,TRUE,FALSE,FALSE,string,FALSE,dc,title,
+Título Alternativo,dc.title.alternative,TRUE,FALSE,FALSE,string,FALSE,dc,title,alternative
+Tipo de Documento,dc.type,TRUE,FALSE,FALSE,string,FALSE,dc,type,
+Contexto de uso,dcterms.audience,TRUE,FALSE,FALSE,string,FALSE,dcterms,audience,
+Es parte de,dcterms.isPartOf,TRUE,FALSE,FALSE,string,FALSE,dcterms,isPartOf,
+Localizacion Fisica,mods.location,TRUE,FALSE,FALSE,string,FALSE,mods,location,
+Entidad de Origen,mods.originInfo.place,FALSE,FALSE,TRUE,string,FALSE,mods,originInfo,place
+Fuente,mods.recordInfo.recordContentSource,FALSE,FALSE,TRUE,string,FALSE,mods,recordInfo,recordContentSource
+Numero de Acta,sedici.acta,TRUE,FALSE,FALSE,string,FALSE,sedici,acta,
+Codirector de tesis,sedici.contributor.codirector,FALSE,TRUE,FALSE,string,TRUE,sedici,contributor,codirector
+Colaborador,sedici.contributor.colaborator,FALSE,TRUE,FALSE,string,TRUE,sedici,contributor,colaborator
+Compilador,sedici.contributor.compiler,FALSE,TRUE,FALSE,string,TRUE,sedici,contributor,compiler
+Director,sedici.contributor.director,FALSE,TRUE,FALSE,string,TRUE,sedici,contributor,director
+Editor,sedici.contributor.editor,FALSE,TRUE,FALSE,string,TRUE,sedici,contributor,editor
+Firmante,sedici.contributor.inscriber,FALSE,TRUE,FALSE,string,TRUE,sedici,contributor,inscriber
+Jurado,sedici.contributor.juror,FALSE,TRUE,FALSE,string,TRUE,sedici,contributor,juror
+Traductor,sedici.contributor.translator,FALSE,TRUE,FALSE,string,TRUE,sedici,contributor,translator
+Autor Institucional,sedici.creator.corporate,FALSE,TRUE,FALSE,string,TRUE,sedici,creator,corporate
+Intérprete,sedici.creator.interprete,FALSE,TRUE,FALSE,string,TRUE,sedici,creator,interprete
+Autor o Etnia,sedici.creator.person,FALSE,TRUE,FALSE,string,TRUE,sedici,creator,person
+Fecha de Presentación,sedici.date.exposure,TRUE,FALSE,FALSE,date,FALSE,sedici,date,exposure
+Fulltext,sedici.description.fulltext,TRUE,FALSE,FALSE,string,FALSE,sedici,description,fulltext
+Notas,sedici.description.note,TRUE,FALSE,FALSE,string,FALSE,sedici,description,note
+Evaluación,sedici.description.peerReview,TRUE,FALSE,FALSE,string,FALSE,sedici,description,peerReview
+Fecha de fin de embargo,sedici.embargo.liftDate,TRUE,FALSE,FALSE,date,FALSE,sedici,embargo,liftDate
+Periodo de Embargo,sedici.embargo.period,TRUE,FALSE,FALSE,date,FALSE,sedici,embargo,period
+Nro Expediente,sedici.identifier.expediente,TRUE,FALSE,FALSE,string,FALSE,sedici,identifier,expediente
+Handle,sedici.identifier.handle,TRUE,FALSE,FALSE,string,FALSE,sedici,identifier,handle
+ISBN,sedici.identifier.isbn,TRUE,FALSE,FALSE,string,FALSE,sedici,identifier,isbn
+ISSN,sedici.identifier.issn,TRUE,FALSE,FALSE,string,FALSE,sedici,identifier,issn
+Otro identificador,sedici.identifier.other,TRUE,FALSE,FALSE,string,FALSE,sedici,identifier,other
+Localizacion Electrónica,sedici.identifier.uri,TRUE,FALSE,FALSE,string,FALSE,sedici,identifier,uri
+Lugar de desarrollo,sedici.institucionDesarrollo,FALSE,FALSE,TRUE,string,FALSE,sedici,institucionDesarrollo,
+Título del Libro,sedici.relation.bookTitle,TRUE,FALSE,FALSE,string,FALSE,sedici,relation,bookTitle
+Programa,sedici.relation.ciclo,TRUE,FALSE,FALSE,string,FALSE,sedici,relation,ciclo
+Dossier,sedici.relation.dossier,TRUE,FALSE,FALSE,string,FALSE,sedici,relation,dossier
+Nombre del Evento,sedici.relation.event,TRUE,FALSE,FALSE,string,FALSE,sedici,relation,event
+Relacionado con,sedici.relation.isRelatedWith,TRUE,FALSE,FALSE,string,FALSE,sedici,relation,isRelatedWith
+Revisado por,sedici.relation.isReviewedBy,TRUE,TRUE,TRUE,string,FALSE,sedici,relation,isReviewedBy
+"Es revisión de
+",sedici.relation.isReviewOf,TRUE,FALSE,FALSE,string,FALSE,sedici,relation,isReviewOf
+Titulo de la serie,sedici.relation.journalTitle,TRUE,FALSE,FALSE,string,FALSE,sedici,relation,journalTitle
+Número de la serie,sedici.relation.journalVolumeAndIssue,TRUE,FALSE,FALSE,string,FALSE,sedici,relation,journalVolumeAndIssue
+Licencia,sedici.rights.license,TRUE,FALSE,FALSE,string,FALSE,sedici,rights,license
+Descripción de la licencia del journal según Sherpa,sedici.rights.sherpa,TRUE,FALSE,FALSE,string,FALSE,sedici,rights,sherpa
+URI de la Licencia,sedici.rights.uri,TRUE,FALSE,FALSE,string,FALSE,sedici,rights,uri
+Descriptores ACM,sedici.subject.acmcss98,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,acmcss98
+Descriptores Decs,sedici.subject.decs,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,decs
+Descriptores SeDiCI+Unesco,sedici.subject.descriptores,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,descriptores
+Descriptores Eurovoc,sedici.subject.eurovoc,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,eurovoc
+Clasificación FORD,sedici.subject.ford,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,ford
+Palabras Clave,sedici.subject.keyword,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,keyword
+Materia (LCSH),sedici.subject.lcsh,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,lcsh
+Materia (Sedici old),sedici.subject.materias,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,materias
+Descriptores Libres,sedici.subject.other,TRUE,FALSE,FALSE,string,FALSE,sedici,subject,other
+SubTipo de Documento,sedici.subtype,TRUE,FALSE,FALSE,string,FALSE,sedici,subtype,
+Subtítulo,sedici.title.subtitle,TRUE,FALSE,FALSE,string,FALSE,sedici,title,subtitle
+Institucion Garante,thesis.degree.grantor,TRUE,FALSE,FALSE,string,FALSE,thesis,degree,grantor
+Grado Alcanzado,thesis.degree.name,TRUE,FALSE,FALSE,string,FALSE,thesis,degree,name

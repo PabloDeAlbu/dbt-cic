@@ -6,9 +6,9 @@
             , mv.authority
         {% endif %}
 
-    FROM {{ source('repository_db', 'metadatavalue') }} mv
-    INNER JOIN {{ source('repository_db', 'metadatafieldregistry') }} mfr ON mfr.metadata_field_id = mv.metadata_field_id
-    INNER JOIN {{ source('repository_db', 'metadataschemaregistry') }} msr ON msr.metadata_schema_id = mfr.metadata_schema_id
+    FROM {{ source('ir', 'metadatavalue') }} mv
+    INNER JOIN {{ source('ir', 'metadatafieldregistry') }} mfr ON mfr.metadata_field_id = mv.metadata_field_id
+    INNER JOIN {{ source('ir', 'metadataschemaregistry') }} msr ON msr.metadata_schema_id = mfr.metadata_schema_id
     WHERE 
         mv.resource_type_id = 2 
         and msr.short_id = '{{ short_id }}'

@@ -1,4 +1,4 @@
-{{ config(materialized='incremental') }}
+{{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
 source_model: "stg_publication_ir"
@@ -8,16 +8,12 @@ src_hashdiff:
   alias: "hashdiff"
 src_payload:
     - title
-    - type
-    - subtype
+    - subtitle
     - available_date
     - created_date
     - exposure_date
-    - language
-    - license_uri
-    - partof
     - publication_date
-    - subtitle
+    - partof
     - volume
     - last_modified
 src_eff: "effective_from"

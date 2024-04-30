@@ -16,6 +16,14 @@ hashed_columns:
   publication_type_hk:
     - internal_identifier
     - subtype
+  language_hk: language
+  publication_language_hk:
+    - internal_identifier
+    - language
+  license_hk: license_uri
+  publication_license_hk:
+    - internal_identifier
+    - license_uri
   publication_hashdiff:
     is_hashdiff: true
     columns:

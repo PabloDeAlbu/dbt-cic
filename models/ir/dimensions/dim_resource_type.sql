@@ -2,7 +2,7 @@ with base as (
     SELECT 
     *
     FROM {{ref('hub_type_ir')}}
-    --ORDER BY subtype
+    ORDER BY subtype
 ),
 
 final as (

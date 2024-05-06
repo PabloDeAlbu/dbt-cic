@@ -1,21 +1,21 @@
-{{ config(materialized='table') }}
+{# {{ config(materialized='table') }}
 
 with base as (
     SELECT 
-        id,
+        internal_identifier,
         type,
         language,
         title,
         locations,
         {{str_to_date('publication_date')}} as publication_date,
-        biblio->>'issue' as issue,
-        biblio->>'volume' as volume,
-        biblio->>'first_page' as first_page,
-        biblio->>'end_page' as end_page,
+        issue,
+        volume,
+        first_page,
+        end_page,
         doi,
-        ids->>'mag' as mag,
-        ids->>'pmid' as pmid,
-        ids->>'pmcid' as pmcid,
+        mag,
+        pmid,
+        pmcid,
         authorships,
         topics,
         -- end openaire-guidelines properties
@@ -54,4 +54,4 @@ final as (
     select * from base
 )
 
-select * from final
+select * from final #}

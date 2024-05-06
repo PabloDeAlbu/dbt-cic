@@ -2,7 +2,7 @@
 
 with base as (
     SELECT
-        id as work_id,
+        id,
         type,
         language,
         title,

@@ -2,23 +2,23 @@
 
 with base as (
     SELECT 
-        id,
+        internal_identifier,
         type,
         language,
         title,
-        locations,
         publication_date,
-        biblio->>'issue' as issue,
-        biblio->>'volume' as volume,
-        biblio->>'first_page' as first_page,
-        biblio->>'end_page' as end_page,
+        volume,
+        issue,
+        start_page,
+        end_page,
         doi,
-        ids->>'mag' as mag,
-        ids->>'pmid' as pmid,
-        ids->>'pmcid' as pmcid,
-        authorships,
-        topics,
-        concepts,
+        pmcid,
+        authors,
+        publishers,
+        subject,
+        keyword,
+        mag,
+        pmid,
         grants,
         apc_list,
         apc_paid,
@@ -46,7 +46,7 @@ with base as (
         best_oa_location,
         _airbyte_extracted_at
     FROM 
-         {{ ref('raw_work_openalex') }}
+         {{ ref('map_publication_work_openalex') }}
 ),
 
 final as (

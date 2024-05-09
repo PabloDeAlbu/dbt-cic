@@ -1,26 +1,20 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "raw_authorship_openalex"
+source_model: "map_publication_person_openalex"
 derived_columns:
   source: "!OPENALEX"
   load_datetime: _airbyte_extracted_at
   {# TODO se debería usar algo como https://docs.openalex.org/api-entities/works/work-object#created_date en effective_from  #}
-  effective_from: _airbyte_extracted_at
+  {# effective_from: _airbyte_extracted_at
   start_date: _airbyte_extracted_at
-  end_date: to_date('9999-12-31', 'YYYY-MM-DD')
+  end_date: to_date('9999-12-31', 'YYYY-MM-DD') #}
 hashed_columns:
-  work_hk: work_id
-  author_hk: author_id
-  authorship_hk: 
-    - author_id
-    - work_id
-  work_hashdiff:
-    is_hashdiff: true
-    columns:
-        - author
-        - countries
-        - institutions
+  publication_hk: publication_internal_identifier
+  person_hk: person_internal_identifier
+  publication_person_hk: 
+    - publication_internal_identifier
+    - person_internal_identifier  
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

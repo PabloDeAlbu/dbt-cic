@@ -1,56 +1,26 @@
-{{ config(materialized='view') }}
+{% set sql_statement %}
+    select publication, work from {{ ref('map_publication-openaire2work-openalex') }};
+{% endset %}
+{%- set map = dbt_utils.get_query_results_as_dict(sql_statement) -%}
 
-with base as (
-    SELECT 
-        internal_identifier,
-        type,
-        language,
-        title,
-        publication_date,
-        volume,
-        issue,
-        start_page,
-        end_page,
-        doi,
-        pmcid,
-        authors,
-        publishers,
-        subject,
-        keyword,
-        mag,
-        pmid,
-        grants,
-        apc_list,
-        apc_paid,
-        indexed_in,
-        is_paratext,
-        open_access,
-        display_name,
-        has_fulltext,
-        is_retracted,
-        related_works,
-        type_crossref,
-        cited_by_count,
-        locations_count,
-        referenced_works,
-        _ab_source_file_url,
-        is_authors_truncated,
-        referenced_works_count,
-        cited_by_percentile_year,
-        corresponding_author_ids,
-        countries_distinct_count,
-        institutions_distinct_count,
-        _ab_source_file_last_modified,
-        corresponding_institution_ids,
-        sustainable_development_goals,
-        best_oa_location,
-        _airbyte_extracted_at
-    FROM 
-         {{ ref('map_publication_work_openalex') }}
-),
+SELECT
+{% set results = run_query(sql_statement) %}
 
-final as (
-    select * from base
-)
+{% if execute %}
+{% set results_list = results.rows %}
+{% else %}
+{% set results_list = [] %}
+{% endif %}
 
-select * from final
+{% for pub in results_list %}
+    {% if pub.1 %}
+        {{- pub.1 }} 
+            {% if pub.0 %}
+                as {{ pub.0 }}
+            {% endif %}
+        {% if not loop.last %}
+            ,
+        {% endif %}
+    {% endif %}
+{% endfor %}
+FROM {{ ref('raw_work_openalex') }}

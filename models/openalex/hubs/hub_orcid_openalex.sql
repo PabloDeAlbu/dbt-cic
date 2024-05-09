@@ -1,8 +1,8 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_dehydrated_author_openalex'
-src_pk: author_hk
+source_model: 'stg_person_openalex'
+src_pk: person_hk
 src_nk: orcid
 src_ldts: _airbyte_extracted_at
 src_source: source

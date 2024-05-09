@@ -1,9 +1,9 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_work_openalex'
-src_pk: work_hk
-src_nk: work_id
+source_model: 'stg_person_openalex'
+src_pk: person_hk
+src_nk: internal_identifier
 src_ldts: _airbyte_extracted_at
 src_source: source
 {%- endset -%}
@@ -20,7 +20,7 @@ with base as (
 final as (
     select * 
     from base
-    where work_id is not null
+    where internal_identifier is not null
 )
 
 select * from final

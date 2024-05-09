@@ -1,21 +1,21 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "raw_dehydrated_author_openalex"
+source_model: "raw_person_openalex"
 derived_columns:
   source: "!OPENALEX"
   load_datetime: _airbyte_extracted_at
-  effective_from: _airbyte_extracted_at
+  {# TODO se debería usar algo como https://docs.openalex.org/api-entities/works/work-object#created_date en effective_from  #}
+  {# effective_from: _airbyte_extracted_at
   start_date: _airbyte_extracted_at
-  end_date: to_date('9999-12-31', 'YYYY-MM-DD')
+  end_date: to_date('9999-12-31', 'YYYY-MM-DD') #}
 hashed_columns:
-  author_hk: id
+  person_hk: internal_identifier
   orcid_hk: orcid
-  work_hashdiff:
+  person_hashdiff:
     is_hashdiff: true
     columns:
-      - display_name
-
+        - person_name
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

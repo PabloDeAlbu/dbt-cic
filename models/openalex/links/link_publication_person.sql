@@ -1,8 +1,8 @@
-{{ config(materialized='incremental')         }}
+{{ config(materialized='incremental') }}
 
-{%- set source_model = "stg_authorship_openalex" -%}
-{%- set src_pk = "authorship_hk" -%}
-{%- set src_fk = ["author_hk", "work_hk"] -%}
+{%- set source_model = "stg_publication_person_openalex" -%}
+{%- set src_pk = "publication_person_hk" -%}
+{%- set src_fk = ["publication_hk", "person_hk"] -%}
 {%- set src_ldts = "_airbyte_extracted_at" -%}
 {%- set src_source = "source" -%}
 

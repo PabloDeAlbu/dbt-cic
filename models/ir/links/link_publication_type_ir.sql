@@ -1,7 +1,7 @@
 {{ config(materialized='incremental') }}
 
 {%- set source_model = "stg_publication_ir" -%}
-{%- set src_pk = "publication_type_HK" -%}
+{%- set src_pk = "publication_type_hk" -%}
 {%- set src_fk = ["publication_hk", "type_hk"] -%}
 {%- set src_ldts = "load_datetime" -%}
 {%- set src_source = "source" -%}

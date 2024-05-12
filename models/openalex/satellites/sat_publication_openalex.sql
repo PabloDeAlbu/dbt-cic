@@ -2,22 +2,20 @@
 
 {%- set yaml_metadata -%}
 source_model: "stg_publication_openalex"
-src_pk: "work_hk"
+src_pk: "publication_hk"
 src_hashdiff: 
-  source_column: "work_hashdiff"
+  source_column: "publication_hashdiff"
   alias: "hashdiff"
 src_payload:
   - 'type'
   - 'language'
   - 'title'
-  - 'locations'
   - 'publication_date'
   - 'issue'
   - 'volume'
-  - 'first_page'
+  - 'start_page'
   - 'end_page'
-  - 'topics'
-  - 'concepts'
+  - 'subject'
   - 'grants'
   - 'apc_list'
   - 'apc_paid'
@@ -32,20 +30,9 @@ src_payload:
   - 'cited_by_count'
   - 'locations_count'
   - 'referenced_works'
-  - '_ab_source_file_url'
-  - 'is_authors_truncated'
-  - 'referenced_works_count'
-  - 'cited_by_percentile_year'
-  - 'corresponding_author_ids'
-  - 'countries_distinct_count'
-  - 'institutions_distinct_count'
-  - '_ab_source_file_last_modified'
-  - 'corresponding_institution_ids'
-  - 'sustainable_development_goals'
-  - 'best_oa_location'
-src_eff: "EFFECTIVE_FROM"
-src_ldts: "LOAD_DATETIME"
-src_source: "RECORD_SOURCE"
+src_eff: "load_datetime"
+src_ldts: "load_datetime"
+src_source: "source"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

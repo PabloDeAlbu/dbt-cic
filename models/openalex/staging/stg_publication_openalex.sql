@@ -27,7 +27,7 @@ hashed_columns:
   publication_subject_hk:
     - internal_identifier
     - subject
-  concept_hk: keyword
+  keyword_hk: keyword
   publication_keyword_hk:
     - internal_identifier
     - keyword

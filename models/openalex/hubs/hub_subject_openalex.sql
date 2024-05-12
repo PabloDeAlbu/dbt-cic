@@ -1,15 +1,15 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_person_openalex'
-src_pk: orcid_hk
-src_nk: orcid
+source_model: 'stg_publication_openalex'
+src_pk: subject_hk
+src_nk: subject
 src_ldts: _airbyte_extracted_at
 src_source: source
 {%- endset -%}
 
-{% set metadata_dict = fromyaml(yaml_metadata) %}
 with base as (
+    {% set metadata_dict = fromyaml(yaml_metadata) %}
     {{ automate_dv.hub(src_pk=metadata_dict["src_pk"],
                     src_nk=metadata_dict["src_nk"], 
                     src_ldts=metadata_dict["src_ldts"],
@@ -20,7 +20,6 @@ with base as (
 final as (
     select * 
     from base
-    where orcid is not null
 )
 
 select * from final

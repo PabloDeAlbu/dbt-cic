@@ -4,8 +4,8 @@ with base as (
     jsonb_array_elements(subjects)->>'id' as subject_internal_identifier,
     jsonb_array_elements(subjects)->>'display_name' as subject_display_name,
     jsonb_array_elements(subjects)->>'score' as score,
-    jsonb_array_elements(subjects)->>'domain' as domain,
-    jsonb_array_elements(subjects)->>'subfield' as subfield
+    jsonb_array_elements(subjects)->>'wikidata' as wikidata,
+    jsonb_array_elements(subjects)->>'level' as level
     FROM {{ref('raw_publication_openalex')}}
 )
 

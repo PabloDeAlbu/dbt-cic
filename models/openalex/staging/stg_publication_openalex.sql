@@ -23,14 +23,6 @@ hashed_columns:
   publication_language_hk:
     - internal_identifier
     - language
-  subject_hk: subject
-  publication_subject_hk:
-    - internal_identifier
-    - subject
-  keyword_hk: keyword
-  publication_keyword_hk:
-    - internal_identifier
-    - keyword
   publication_hashdiff:
     is_hashdiff: true
     columns:
@@ -42,7 +34,6 @@ hashed_columns:
         - volume
         - start_page
         - end_page
-        - subject
         - grants
         - apc_list
         - apc_paid

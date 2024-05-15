@@ -15,19 +15,19 @@ src_payload:
   - 'volume'
   - 'start_page'
   - 'end_page'
+  - 'is_paratext'
+  - 'display_name'
+  - 'has_fulltext'
+  - 'is_retracted'
+  - 'type_crossref'
+  - 'cited_by_count'
+  - 'locations_count'
   {# - 'grants'
   - 'apc_list'
   - 'apc_paid'
   - 'indexed_in'  #}
-  - 'is_paratext'
   {# - 'open_access' #}
-  - 'display_name'
-  - 'has_fulltext'
-  - 'is_retracted'
   {# - 'related_works' #}
-  - 'type_crossref'
-  - 'cited_by_count'
-  - 'locations_count'
   {# - 'referenced_works' #}
 src_eff: "load_datetime"
 src_ldts: "load_datetime"

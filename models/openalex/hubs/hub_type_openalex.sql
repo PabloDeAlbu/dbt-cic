@@ -1,9 +1,9 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_publication_openalex'
-src_pk: keyword_hk
-src_nk: keyword
+source_model: 'stg_work_openalex'
+src_pk: type_hk
+src_nk: type
 src_ldts: _airbyte_extracted_at
 src_source: source
 {%- endset -%}

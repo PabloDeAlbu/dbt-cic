@@ -1,7 +1,7 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_publication_openalex'
+source_model: 'stg_work_openalex'
 src_pk: language_hk
 src_nk: language
 src_ldts: _airbyte_extracted_at
@@ -20,7 +20,6 @@ with base as (
 final as (
     select * 
     from base
-    where language_hk is not null
 )
 
 select * from final

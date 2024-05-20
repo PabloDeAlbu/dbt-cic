@@ -1,8 +1,8 @@
 {{ config(materialized='incremental') }}
 
-{%- set source_model = "stg_publication_ir" -%}
-{%- set src_pk = "publication_license_hk" -%}
-{%- set src_fk = ["publication_hk", "license_hk"] -%}
+{%- set source_model = "stg_item_ir" -%}
+{%- set src_pk = "item_type_hk" -%}
+{%- set src_fk = ["item_hk", "type_hk"] -%}
 {%- set src_ldts = "load_datetime" -%}
 {%- set src_source = "source" -%}
 

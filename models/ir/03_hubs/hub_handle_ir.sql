@@ -1,10 +1,10 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_publication_ir'
-src_pk: type_hk
-src_nk: subtype
-src_ldts: load_datetime
+source_model: 'stg_item_ir'
+src_pk: handle_hk
+src_nk: handle
+src_ldts: _airbyte_extracted_at
 src_source: source
 {%- endset -%}
 
@@ -20,8 +20,6 @@ with base as (
 final as (
     select * 
     from base
-    where subtype is not null
-    order by subtype
 )
 
 select * from final

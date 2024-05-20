@@ -1,43 +1,49 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "typed_publication_ir"
+source_model: "raw_item_ir"
 derived_columns:
-  source: "!REPOSITORY_DB"
+  source: "!IR_DB"
   load_datetime: _airbyte_extracted_at
-  effective_from: available_date
-  start_date: _airbyte_extracted_at
+  effective_from: last_modified
+  start_date: last_modified
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  publication_hk: internal_identifier
-  handle_hk: handle
-  doi_hk: doi
-  type_hk: subtype
-  publication_type_hk:
-    - internal_identifier
+  item_hk: item_id
+  submitter_hk: submitter_id
+  item_submitter_hk:
+    - item_id
+    - submitter_id
+  owningcollection_hk: owning_collection
+  item_owningcollection_hk:
+    - item_id
+    - owning_collection
+  type_hk: type
+  item_type_hk:
+    - item_id
+    - type
+  subtype_hk: subtype
+  item_subtype_hk:
+    - item_id
     - subtype
-  language_hk: language
-  publication_language_hk:
-    - internal_identifier
-    - language
-  license_hk: license_uri
-  publication_license_hk:
-    - internal_identifier
-    - license_uri
-  publication_hashdiff:
+  handle_hk: handle
+  item_handle_hk:
+    - item_id
+    - handle
+  doi_hk: doi
+  item_doi_hk:
+    - item_id
+    - doi
+  item_hashdiff:
     is_hashdiff: true
     columns:
       - title
-      - type
-      - subtype
+      - subtitle
       - available_date
       - created_date
       - exposure_date
       - publication_date
-      - language
-      - license_uri
       - partof
-      - subtitle
       - volume
       - last_modified
 {%- endset -%}

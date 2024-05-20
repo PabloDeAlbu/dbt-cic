@@ -1,10 +1,10 @@
 {{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
-source_model: "stg_publication_ir"
-src_pk: "publication_hk"
+source_model: "stg_item_ir"
+src_pk: "item_hk"
 src_hashdiff: 
-  source_column: "publication_hashdiff"
+  source_column: "item_hashdiff"
   alias: "hashdiff"
 src_payload:
     - title

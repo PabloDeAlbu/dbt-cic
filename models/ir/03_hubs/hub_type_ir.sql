@@ -1,10 +1,10 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_publication_ir'
-src_pk: publication_hk
-src_nk: internal_identifier
-src_ldts: load_datetime
+source_model: 'stg_item_ir'
+src_pk: type_hk
+src_nk: type
+src_ldts: _airbyte_extracted_at
 src_source: source
 {%- endset -%}
 
@@ -20,7 +20,6 @@ with base as (
 final as (
     select * 
     from base
-    where internal_identifier is not null
 )
 
 select * from final

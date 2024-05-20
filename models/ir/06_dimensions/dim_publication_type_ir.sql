@@ -1,5 +1,6 @@
 WITH base AS (
     SELECT
+    subtype_hk,
     UPPER(subtype) as subtype
     FROM {{ref('hub_subtype_ir')}}
 ),
@@ -16,6 +17,7 @@ map2coar AS (
 
 final AS (
     SELECT 
+    subtype_hk,
     map2coar.type as sedici_type,
     base.subtype as sedici_subtype,
     map2coar.label_es as coar_label_es,

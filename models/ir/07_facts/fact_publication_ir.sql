@@ -11,9 +11,12 @@ with base as (
         sat_item_ir.publication_date,
         sat_item_ir.partof,
         sat_item_ir.volume,
-        sat_item_ir.last_modified
+        sat_item_ir.last_modified,
+        dim_publication_type_ir.*
     FROM {{ref('sal_item_ir')}} sal_item_ir
-    INNER JOIN {{ref('sat_item_ir')}} sat_item_ir ON sat_item_ir.item_hk = sal_item_ir.item_hk
+    INNER JOIN {{ref('sat_item_ir')}} ON sat_item_ir.item_hk = sal_item_ir.item_hk
+    INNER JOIN {{ref('link_item_subtype_ir')}} ON link_item_subtype_ir.item_hk = sal_item_ir.item_hk
+    INNER JOIN {{ref('dim_publication_type_ir')}} ON dim_publication_type_ir.subtype_hk = link_item_subtype_ir.subtype_hk
 ),
 
 final as (

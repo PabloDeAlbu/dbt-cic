@@ -51,7 +51,7 @@ hashed_columns:
       - pmid
       - pmcid
       - is_paratext
-      - is_oai
+      - is_oa
       - oa_url
       - oa_status
       - any_repository_has_fulltext

@@ -3,7 +3,7 @@
 with base as (
     SELECT
         id,
-        type::varchar as type,
+        REPLACE(type::varchar, '"','') as type,
         language,
         title,
         {{str_to_date('publication_date')}} as publication_date,
@@ -16,7 +16,7 @@ with base as (
         ids->>'pmid' as pmid,
         ids->>'pmcid' as pmcid,
         is_paratext,
-        open_access->>'is_oa' as is_oai,
+        open_access->>'is_oa' as is_oa,
         open_access->>'oa_url' as oa_url,
         open_access->>'oa_status' as oa_status,
         open_access->>'any_repository_has_fulltext' as any_repository_has_fulltext,

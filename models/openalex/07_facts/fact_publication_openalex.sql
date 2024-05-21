@@ -1,7 +1,6 @@
 WITH base AS (
     SELECT
-        sat.id,
-        sat.type,
+        sat.id as openalex_id,
         sat.language,
         sat.title,
         sat.publication_date,
@@ -14,7 +13,7 @@ WITH base AS (
         sat.pmid,
         sat.pmcid,
         sat.is_paratext,
-        sat.is_oai,
+        sat.is_oa,
         sat.oa_url,
         sat.oa_status,
         sat.any_repository_has_fulltext,
@@ -29,9 +28,14 @@ WITH base AS (
         sat.cited_by_percentile_year_max,
         sat.cited_by_percentile_year_min,
         sat.countries_distinct_count,
-        sat.institutions_distinct_count
+        sat.institutions_distinct_count,
+        dim_resource_type_openalex.openalex_type,
+        dim_resource_type_openalex.coar_label_es,
+        dim_resource_type_openalex.coar_uri
     FROM {{ref('sal_work_openalex')}} sal 
     INNER JOIN {{ref('sat_work_openalex')}} sat ON sal.work_hk = sat.work_hk
+    INNER JOIN {{ref('link_work_type_openalex')}} ON link_work_type_openalex.work_hk = sal.work_hk
+    INNER JOIN {{ref('dim_resource_type_openalex')}} ON dim_resource_type_openalex.type_hk = link_work_type_openalex.type_hk
 ),
 
 final AS (

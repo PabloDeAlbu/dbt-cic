@@ -39,14 +39,20 @@ models:
     ir:
       +materialized: "view"
       +schema: ir
+    openaire:
+      +materialized: "view"
+      +schema: openaire
     openalex:
       +materialized: "view"
       +schema: openalex
 
 seeds:
-  coar:
-    +schema: coar
-  general:
-    +schema: general
-  ir:
-    +schema: ir
+  dbt_unlp:
+    coar:
+      +schema: coar
+    openaire:
+      +schema: openaire
+    openalex:
+      +schema: openalex
+    ir:
+      +schema: ir

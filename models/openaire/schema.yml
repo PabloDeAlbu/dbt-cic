@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: openaire
+    description: 'Openaire research product'
+    database: staging
+    schema: ldg_openaire
+    tables:
+      - name: researchproduct

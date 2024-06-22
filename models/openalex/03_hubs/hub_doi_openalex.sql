@@ -18,7 +18,11 @@ with base as (
 ),
 
 final as (
-    select * 
+    select 
+        doi_hk,
+        lower('10.' || split_part(doi, '10.', 2)) as doi,
+        _airbyte_extracted_at,
+        source
     from base
 )
 

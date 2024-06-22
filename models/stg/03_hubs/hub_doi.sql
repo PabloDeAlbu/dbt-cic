@@ -33,11 +33,11 @@ hub_doi_openaire AS (
 
 final AS (
     SELECT 
-        COALESCE(oa.doi_hk, ir.doi_hk, op.doi_hk) AS doi_hk, 
-        COALESCE(oa.doi, ir.doi, op.doi) AS doi, 
-        COALESCE(oa.in_openalex, FALSE) AS in_openalex, 
+        COALESCE(oa.doi_hk, ir.doi_hk, op.doi_hk) AS doi_hk,
+        COALESCE(oa.doi, ir.doi, op.doi) AS doi,
         COALESCE(ir.in_ir, FALSE) AS in_ir,
-        COALESCE(op.in_openaire, FALSE) AS in_openaire
+        COALESCE(op.in_openaire, FALSE) AS in_openaire,
+        COALESCE(oa.in_openalex, FALSE) AS in_openalex
     FROM hub_doi_openalex oa
     FULL OUTER JOIN hub_doi_ir ir ON oa.doi = ir.doi
     FULL OUTER JOIN hub_doi_openaire op ON COALESCE(oa.doi, ir.doi) = op.doi

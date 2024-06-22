@@ -7,7 +7,7 @@ final AS (
     SELECT
     doi_hk,
     doi,
-    REPLACE(doi, 'https://doi.org/', '') as doi_short,
+    CONCAT('https://doi.org/', doi) as doi_url,
     in_ir,
     in_openaire,
     in_openalex

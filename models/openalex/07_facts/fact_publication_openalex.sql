@@ -1,5 +1,9 @@
 WITH base AS (
     SELECT
+        sal.doi,
+        sal.mag,
+        sal.pmid,
+        sal.pmcid,
         sat.id as openalex_id,
         sat.language,
         sat.title,
@@ -8,10 +12,6 @@ WITH base AS (
         sat.volume,
         sat.first_page,
         sat.end_page,
-        sat.doi,
-        sat.mag,
-        sat.pmid,
-        sat.pmcid,
         sat.is_paratext,
         sat.is_oa,
         sat.oa_url,

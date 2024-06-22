@@ -9,7 +9,7 @@ derived_columns:
   start_date: dateofacceptance
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  id_hk: id
+  researchproduct_hk: id
   doi_hk: doi
   pmid_hk: pmid
   pmc_hk: pmc
@@ -17,6 +17,27 @@ hashed_columns:
   uniprot_hk: uniprot
   ena_hk: ena
   pdb_hk: pdb
+  researchproduct_doi_hk:
+    - id
+    - doi
+  researchproduct_pmid_hk:
+    - id
+    - pmid
+  researchproduct_pmc_hk:
+    - id
+    - pmc
+  researchproduct_arxiv_hk:
+    - id
+    - arxiv
+  researchproduct_uniprot_hk:
+    - id
+    - uniprot
+  researchproduct_ena_hk:
+    - id
+    - ena
+  researchproduct_pdb_hk:
+    - id
+    - pdb
   researchproduct_hashdiff:
     is_hashdiff: true
     columns:

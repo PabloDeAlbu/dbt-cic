@@ -4,7 +4,7 @@ with base as (
     SELECT
         id, 
         {# dateOfCollection,  #}
-        CONCAT('https://doi.org/', doi) as doi, 
+        LOWER(doi) as doi, 
         pmid, 
         pmc, 
         "arXiv" as arxiv, 

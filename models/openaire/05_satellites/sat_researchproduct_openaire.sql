@@ -3,7 +3,7 @@
 
 {%- set yaml_metadata -%}
 source_model: "stg_researchproduct_openaire"
-src_pk: "id_hk"
+src_pk: "researchproduct_hk"
 src_hashdiff:
   source_column: "researchproduct_hashdiff"
   alias: "hashdiff"

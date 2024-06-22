@@ -2,8 +2,8 @@
 
 {%- set yaml_metadata -%}
 source_model: 'stg_researchproduct_openaire'
-src_pk: doi_hk
-src_nk: doi
+src_pk: researchproduct_hk
+src_nk: id
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}
@@ -18,11 +18,7 @@ WITH base AS (
 ),
 
 final AS (
-    SELECT
-        doi_hk,
-        lower('10.' || split_part(doi, '10.', 2)) AS doi,
-        load_datetime,
-        source
+    SELECT *
     FROM base
 )
 

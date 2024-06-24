@@ -11,33 +11,39 @@ derived_columns:
 hashed_columns:
   researchproduct_hk: id
   doi_hk: doi
-  pmid_hk: pmid
-  pmc_hk: pmc
-  arxiv_hk: arxiv
-  uniprot_hk: uniprot
-  ena_hk: ena
-  pdb_hk: pdb
   researchproduct_doi_hk:
     - id
     - doi
+  pmid_hk: pmid
   researchproduct_pmid_hk:
     - id
     - pmid
+  pmc_hk: pmc
   researchproduct_pmc_hk:
     - id
     - pmc
+  arxiv_hk: arxiv
   researchproduct_arxiv_hk:
     - id
     - arxiv
+  uniprot_hk: uniprot
   researchproduct_uniprot_hk:
     - id
     - uniprot
+  ena_hk: ena
   researchproduct_ena_hk:
     - id
     - ena
+  pdb_hk: pdb
   researchproduct_pdb_hk:
     - id
     - pdb
+  resourcetype_hk: resourcetype
+  researchproduct_resourcetype_hk:
+    - resourcetype
+  resulttype_hk: resulttype
+  researchproduct_resulttype_hk:
+    - resulttype
   researchproduct_hashdiff:
     is_hashdiff: true
     columns:

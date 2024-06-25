@@ -1,5 +1,4 @@
-{# {{ config(materialized='incremental') }} #}
-{{ config(materialized='table') }}
+{{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
 source_model: "stg_researchproduct_openaire"

@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
 source_model: "stg_item_ir"

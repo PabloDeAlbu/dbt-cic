@@ -40,9 +40,11 @@ hashed_columns:
     - pdb
   resourcetype_hk: resourcetype
   researchproduct_resourcetype_hk:
+    - id
     - resourcetype
   resulttype_hk: resulttype
   researchproduct_resulttype_hk:
+    - id
     - resulttype
   researchproduct_hashdiff:
     is_hashdiff: true

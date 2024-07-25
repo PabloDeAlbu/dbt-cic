@@ -4,7 +4,7 @@
 source_model: 'stg_work_openalex'
 src_pk: doi_hk
 src_nk: doi
-src_ldts: _airbyte_extracted_at
+src_ldts: load_datetime
 src_source: source
 {%- endset -%}
 
@@ -21,7 +21,7 @@ final as (
     select 
         doi_hk,
         lower('10.' || split_part(doi, '10.', 2)) as doi,
-        _airbyte_extracted_at,
+        load_datetime,
         source
     from base
 )

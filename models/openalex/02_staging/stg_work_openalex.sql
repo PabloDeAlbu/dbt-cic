@@ -4,7 +4,7 @@
 source_model: "raw_work_openalex"
 derived_columns:
   source: "!OPENALEX"
-  load_datetime: _airbyte_extracted_at
+  load_datetime: load_datetime
   effective_from: publication_date
   start_date: publication_date
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')

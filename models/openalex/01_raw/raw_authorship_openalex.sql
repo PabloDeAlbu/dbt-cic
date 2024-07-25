@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{# {{ config(materialized='table') }}
 
 WITH base AS (
     SELECT
@@ -23,4 +23,4 @@ final as (
     SELECT * FROM base
 )
 
-SELECT * FROM final
+SELECT * FROM final #}

@@ -6,4 +6,4 @@ sources:
     database: staging
     schema: ldg_openalex
     tables:
-      - name: openalex_works_unlp
+      - name: work

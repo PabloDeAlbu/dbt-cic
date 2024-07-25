@@ -31,7 +31,8 @@ with base as (
         cited_by_percentile_year::json->>'max' as cited_by_percentile_year_max,
         cited_by_percentile_year::json->>'max' as cited_by_percentile_year_min,
         countries_distinct_count,
-        institutions_distinct_count
+        institutions_distinct_count,
+        load_datetime
         --corresponding_author_ids,
         --corresponding_institution_ids,
         --locations,

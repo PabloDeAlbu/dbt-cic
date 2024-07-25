@@ -3,7 +3,7 @@
 {%- set source_model = "stg_work_openalex" -%}
 {%- set src_pk = "work_pmcid_hk" -%}
 {%- set src_fk = ["work_hk", "pmcid_hk"] -%}
-{%- set src_ldts = "_airbyte_extracted_at" -%}
+{%- set src_ldts = "load_datetime" -%}
 {%- set src_source = "source" -%}
 
 {{ automate_dv.link(src_pk=src_pk, src_fk=src_fk, src_ldts=src_ldts,

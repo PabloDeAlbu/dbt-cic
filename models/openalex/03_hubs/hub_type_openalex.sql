@@ -4,7 +4,7 @@
 source_model: 'stg_work_openalex'
 src_pk: type_hk
 src_nk: type
-src_ldts: _airbyte_extracted_at
+src_ldts: load_datetime
 src_source: source
 {%- endset -%}
 

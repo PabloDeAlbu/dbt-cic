@@ -39,6 +39,9 @@ models:
     ir:
       +materialized: "view"
       +schema: ir
+    ir_oai:
+      +materialized: "view"
+      +schema: ir_oai
     openaire:
       +materialized: "view"
       +schema: openaire
@@ -56,3 +59,5 @@ seeds:
       +schema: openalex
     ir:
       +schema: ir
+    ir_oai:
+      +schema: ir_oai

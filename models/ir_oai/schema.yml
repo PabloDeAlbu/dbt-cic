@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: ir_oai
+    description: 'DSpace database'
+    database: staging
+    schema: ldg_ir_oai
+    tables:
+      - name: item
+      - name: item_contributor
+      - name: item_creator
+      - name: item_language
+      - name: item_relation
+      - name: item_subject

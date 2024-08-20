@@ -9,3 +9,5 @@ sources:
       - name: dauthor
       - name: dinstitution
       - name: work
+      - name: work_authorship
+      - name: work_location

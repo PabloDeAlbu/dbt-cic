@@ -1,9 +1,9 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_dauthor_openalex'
+source_model: 'stg_work_authorship_openalex'
 src_pk: orcid_hk
-src_nk: orcid
+src_nk: author_orcid
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}

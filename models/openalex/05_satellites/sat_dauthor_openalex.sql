@@ -1,15 +1,15 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: "stg_dauthor_openalex"
+source_model: "stg_work_authorship_openalex"
 src_pk: "dauthor_hk"
 src_hashdiff:
   source_column: "dauthor_hashdiff"
   alias: "hashdiff"
 src_payload:
   - id
-  - orcid
-  - display_name
+  - author_orcid
+  - author_display_name
 
 src_eff: "load_datetime"
 src_ldts: "load_datetime"

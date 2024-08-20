@@ -13,6 +13,13 @@ hashed_columns:
     - id
     - source_id
   source_type_hk: source_type
+  work_source_type:
+    - id
+    - source_type
+  source_host_organization_hk: source_host_organization
+  work_source_host_organization:
+    - id
+    - source_host_organization
   license_hk: license
   version_hk: version
 {%- endset -%}

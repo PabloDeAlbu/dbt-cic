@@ -3,7 +3,7 @@
 {%- set yaml_metadata -%}
 source_model: 'stg_work_authorship_openalex'
 src_pk: dinstitution_hk
-src_nk: id
+src_nk: institution_id
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}

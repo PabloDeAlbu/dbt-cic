@@ -4,6 +4,8 @@ sources:
   - name: openalex
     description: 'Openalex works'
     database: staging
-    schema: ldg_openalex
+    schema: stg_openalex
     tables:
+      - name: dauthor
+      - name: dinstitution
       - name: work

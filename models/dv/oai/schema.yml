@@ -7,11 +7,11 @@ sources:
     schema: stg_oai
     tables:
       - name: item
-      - name: bridge_item_contributor
-      - name: bridge_item_creator
-      - name: bridge_item_language
-      - name: bridge_item_relation
-      - name: bridge_item_subject
-      - name: bridge_item_doi
-      - name: bridge_item_issn
-      - name: bridge_item_isbn
+      - name: item_doi
+      - name: item_contributor
+      - name: item_creator
+      - name: item_isbn
+      - name: item_issn
+      - name: item_language
+      - name: item_relation
+      - name: item_subject

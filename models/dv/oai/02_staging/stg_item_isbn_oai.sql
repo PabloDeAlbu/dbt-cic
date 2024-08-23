@@ -2,42 +2,16 @@
 
 {%- set yaml_metadata -%}
 source_model: 
-  'oai': 'item'
+  'oai': 'item_isbn'
 derived_columns:
   source: "!OAI"
   load_datetime: load_datetime
-  effective_from: date_issued
-  start_date: date_issued
-  end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
   handle_hk: handle
-  type_openaire_hk: type_openaire
-  handle_type_openaire_hk:
+  isbn_hk: isbn
+  handle_isbn_hk: 
     - handle
-    - type_openaire
-  type_snrd_hk: type_snrd
-  handle_type_snrd_hk:
-    - handle
-    - type_snrd
-  version_hk: version
-  access_right_hk: access_right
-  access_level_hk: access_level
-  license_condition_hk: license_condition
-  item_hashdiff:
-    is_hashdiff: true
-    columns:
-      - title
-      - title_alternative
-      - handle
-      - date_issued
-      - date_exposure
-      - description
-      - type_openaire
-      - type_snrd
-      - version
-      - access_right
-      - access_level
-      - license_condition
+    - isbn
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

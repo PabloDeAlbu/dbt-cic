@@ -1,8 +1,8 @@
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
 source_model: 
-  'oai': 'bridge_item_doi'
+  'oai': 'item_doi'
 derived_columns:
   source: "!OAI"
   load_datetime: load_datetime

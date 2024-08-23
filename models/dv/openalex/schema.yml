@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: openalex
+    description: 'Openalex works'
+    database: staging
+    schema: stg_openalex
+    tables:
+      - name: author
+      - name: institution
+      - name: work
+      - name: work_authorship
+      - name: work_location

@@ -50,7 +50,12 @@ models:
         +materialized: "view"
         +schema: openalex
     mart:
-      +materialized: "table"
+      01_dimensions:
+        +schema: mart
+        +materialized: "table"
+      02_fact:
+        +schema: mart
+        +materialized: "table"
       
       
 

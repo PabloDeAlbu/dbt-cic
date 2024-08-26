@@ -50,6 +50,8 @@ models:
         +materialized: "view"
         +schema: openalex
     mart:
+      +materialized: "table"
+      
       
 
 seeds:

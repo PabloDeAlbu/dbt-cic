@@ -8,6 +8,9 @@ sources:
     tables:
       - name: author
       - name: institution
+      - name: language
+      - name: license
       - name: work
-      - name: work_authorship
-      - name: work_location
+      - name: work2authorship
+      - name: work2location
+      - name: work_type

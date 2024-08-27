@@ -2,26 +2,13 @@
 
 {%- set yaml_metadata -%}
 source_model: 
-  'openalex': 'work_location'
+  'openalex': 'work_type'
 derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  work_hk: id
-  dsource_hk: source_id
-  work_dsource_hk:
-    - id
-    - source_id
-  source_type_hk: source_type
-  work_source_type:
-    - id
-    - source_type
-  source_host_organization_hk: source_host_organization
-  work_source_host_organization:
-    - id
-    - source_host_organization
-  license_hk: license
-  version_hk: version
+  work_type_hk: key_display_name
+
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

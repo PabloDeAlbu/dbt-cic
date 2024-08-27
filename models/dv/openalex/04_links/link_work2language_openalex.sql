@@ -1,8 +1,8 @@
 {{ config(materialized='incremental') }}
 
 {%- set source_model = "stg_work_openalex" -%}
-{%- set src_pk = "work_doi_hk" -%}
-{%- set src_fk = ["work_hk", "doi_hk"] -%}
+{%- set src_pk = "work2language_hk" -%}
+{%- set src_fk = ["work_hk", "language_hk"] -%}
 {%- set src_ldts = "load_datetime" -%}
 {%- set src_source = "source" -%}
 

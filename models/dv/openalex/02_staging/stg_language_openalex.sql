@@ -2,36 +2,13 @@
 
 {%- set yaml_metadata -%}
 source_model: 
-  'openalex': 'work_authorship'
+  'openalex': 'language'
 derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  work_hk: id
-  author_hk: author_id
-  work_author_hk:
-    - id
-    - author_id
-  orcid_hk: author_orcid
-  author_orcid_hk:
-    - author_id
-    - author_orcid
-  institution_hk: institution_id
-  work_institution_hk:
-    - id
-    - institution_id
-  ror_hk: institution_ror
-  institution_ror_hk:
-    - institution_id
-    - institution_ror
-  author_hashdiff:
-    is_hashdiff: true
-    columns:
-      - author_display_name
-  institution_hashdiff:
-    is_hashdiff: true
-    columns:
-      - institution_display_name
+  language_hk: key
+
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

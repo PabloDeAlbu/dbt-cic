@@ -12,27 +12,27 @@ derived_columns:
 hashed_columns:
   work_hk: work_id
   doi_hk: doi
-  work_doi_hk:
+  work2doi_hk:
     - work_id
     - doi
   mag_hk: mag
-  work_mag_hk:
+  work2mag_hk:
     - work_id
     - mag
   pmid_hk: pmid
-  work_pmid_hk:
+  work2pmid_hk:
     - work_id
     - pmid
   pmcid_hk: pmcid
-  work_pmcid_hk:
+  work2pmcid_hk:
     - work_id
     - pmcid
-  type_hk: type
-  work_type_hk:
+  work_type_hk: type
+  work2work_type_hk:
     - work_id
     - type
   language_hk: language
-  work_language_hk:
+  work2language_hk:
     - work_id
     - language
   work_hashdiff:

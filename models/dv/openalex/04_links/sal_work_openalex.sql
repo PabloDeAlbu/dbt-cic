@@ -6,8 +6,6 @@ with base as (
         hub_mag_openalex.mag,
         hub_pmcid_openalex.pmcid,
         hub_pmid_openalex.pmid
-        {# hub_language_openalex.language,
-        hub_type_openalex.type #}
     FROM {{ref('hub_work_openalex')}}
     LEFT JOIN {{ref('link_work2doi_openalex')}} ON hub_work_openalex.work_hk = link_work2doi_openalex.work_hk
     LEFT JOIN {{ref('hub_doi_openalex')}} ON hub_doi_openalex.doi_hk = link_work2doi_openalex.doi_hk

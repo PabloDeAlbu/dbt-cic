@@ -7,14 +7,10 @@ src_hashdiff:
   source_column: "work_hashdiff"
   alias: "hashdiff"
 src_payload:
-  - work_id
-  - doi
   - title
   - display_name
   - publication_year
   - publication_date
-  - language
-  - type
   - countries_distinct_count
   - institutions_distinct_count
   - fwci
@@ -27,9 +23,6 @@ src_payload:
   - referenced_works_count
   - updated_date
   - created_date
-  - mag
-  - pmcid
-  - pmid
   - any_repository_has_fulltext
   - is_oa
   - oa_status
@@ -39,7 +32,6 @@ src_payload:
   - citation_normalized_percentile_is_in_top_10_percent
   - citation_normalized_percentile_is_in_top_1_percent
   - citation_normalized_percentile_value
-  - primary_location_source_id
   - apc_list_currency
   - apc_list_provenance
   - apc_list_value
@@ -48,7 +40,6 @@ src_payload:
   - apc_paid_provenance
   - apc_paid_value
   - apc_paid_value_usd
-  - primary_topic_id
   - indexed_in_arxiv
   - indexed_in_doaj
   - indexed_in_crossref

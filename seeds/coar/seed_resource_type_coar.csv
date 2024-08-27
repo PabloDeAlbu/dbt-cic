@@ -1,4 +1,4 @@
-uri,label,parent_label_1,parent_label_2,parent_label_3,label_es
+coar_uri,label,parent_label_1,parent_label_2,parent_label_3,label_es
 http://purl.org/coar/resource_type/c_7acd,CORRIGENDUM,JOURNAL ARTICLE,JOURNAL,TEXT,CORRIGENDA
 http://purl.org/coar/resource_type/c_beb9,DATA PAPER,JOURNAL ARTICLE,JOURNAL,TEXT,ARTÍCULO DE DATOS
 http://purl.org/coar/resource_type/c_2df8fbb1,RESEARCH ARTICLE,JOURNAL ARTICLE,JOURNAL,TEXT,ARTÍCULO ORIGINAL

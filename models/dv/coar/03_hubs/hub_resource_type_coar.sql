@@ -2,8 +2,8 @@
 
 {%- set yaml_metadata -%}
 source_model: 'stg_resource_type_coar'
-src_pk: uri_hk
-src_nk: uri
+src_pk: coar_uri_hk
+src_nk: coar_uri
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}

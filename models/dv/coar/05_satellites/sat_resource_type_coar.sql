@@ -2,7 +2,7 @@
 
 {%- set yaml_metadata -%}
 source_model: "stg_resource_type_coar"
-src_pk: "uri_hk"
+src_pk: "coar_uri_hk"
 src_hashdiff: 
   source_column: "item_hashdiff"
   alias: "hashdiff"

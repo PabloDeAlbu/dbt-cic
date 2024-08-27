@@ -6,7 +6,7 @@ derived_columns:
   source: "!COAR"
   load_datetime: load_datetime
 hashed_columns:
-  uri_hk: uri
+  coar_uri_hk: coar_uri
   item_hashdiff:
     is_hashdiff: true
     columns:

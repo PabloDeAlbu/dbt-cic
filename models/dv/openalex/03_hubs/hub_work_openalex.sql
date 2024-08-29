@@ -3,7 +3,7 @@
 {%- set yaml_metadata -%}
 source_model: 'stg_work_openalex'
 src_pk: work_hk
-src_nk: work_id
+src_nk: id
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}

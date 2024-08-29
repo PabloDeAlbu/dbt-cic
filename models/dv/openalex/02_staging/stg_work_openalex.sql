@@ -10,35 +10,29 @@ derived_columns:
   start_date: publication_date
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  work_hk: work_id
+  work_hk: id
   doi_hk: doi
-  work2doi_hk:
-    - work_id
-    - doi
   mag_hk: mag
-  work2mag_hk:
-    - work_id
-    - mag
   pmid_hk: pmid
-  work2pmid_hk:
-    - work_id
-    - pmid
   pmcid_hk: pmcid
-  work2pmcid_hk:
-    - work_id
+  work2id_hk:
+    - id
+    - doi
+    - mag
+    - pmid
     - pmcid
   work_type_hk: type
   work2work_type_hk:
-    - work_id
+    - id
     - type
   language_hk: language
   work2language_hk:
-    - work_id
+    - id
     - language
   work_hashdiff:
     is_hashdiff: true
     columns:
-      - work_id
+      - id
       - doi
       - title
       - display_name
@@ -70,7 +64,6 @@ hashed_columns:
       - citation_normalized_percentile_is_in_top_10_percent
       - citation_normalized_percentile_is_in_top_1_percent
       - citation_normalized_percentile_value
-      - primary_location_source_id
       - apc_list_currency
       - apc_list_provenance
       - apc_list_value
@@ -79,7 +72,6 @@ hashed_columns:
       - apc_paid_provenance
       - apc_paid_value
       - apc_paid_value_usd
-      - primary_topic_id
       - indexed_in_arxiv
       - indexed_in_doaj
       - indexed_in_crossref

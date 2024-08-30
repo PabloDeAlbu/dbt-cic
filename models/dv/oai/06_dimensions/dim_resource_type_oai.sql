@@ -27,7 +27,7 @@ final AS (
         type_snrd,
         type,
         label_es as coar_label_es,
-        coar_uri
+        coar
     FROM type_snrd
     INNER JOIN map2snrd ON type_snrd.type_snrd = map2snrd.type
 )

@@ -2,12 +2,12 @@
 
 {%- set yaml_metadata -%}
 source_model: 
-  'openalex': 'work_type'
+  'openalex': 'worktype'
 derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  work_type_hk: work_type_display_name
+  worktype_hk: worktype_display_name
 
 {%- endset -%}
 

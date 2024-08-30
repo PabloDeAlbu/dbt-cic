@@ -13,4 +13,4 @@ sources:
       - name: work
       - name: work2authorship
       - name: work2location
-      - name: work_type
+      - name: worktype

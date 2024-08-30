@@ -11,7 +11,7 @@ WITH base AS (
         dim_resourcetype.openaire_resourcetype,
         dim_resourcetype.coar_label,
         dim_resourcetype.coar_label_es,
-        dim_resourcetype.coar_uri,
+        dim_resourcetype.coar,
         sat.bestaccessright,
         sat.dateofacceptance,
         sat.publisher,

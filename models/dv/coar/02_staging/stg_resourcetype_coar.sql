@@ -1,20 +1,21 @@
 {{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
-source_model: 'resource_type_coar'
+source_model: 'map_resourcetype_coar2worktype_openalex'
 derived_columns:
-  source: "!COAR"
+  source: "!SEED"
   load_datetime: load_datetime
 hashed_columns:
-  coar_uri_hk: coar_uri
-  item_hashdiff:
+  resourcetype_hk: coar
+  worktype_hk: worktype
+  sal_resourcetype_hk:
+    - coar
+    - worktype
+  resourcetype_hashdiff:
     is_hashdiff: true
     columns:
-      - label
-      - parent_label_1
-      - parent_label_2
-      - parent_label_3
-      - label_es
+      - coar
+      - worktype
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

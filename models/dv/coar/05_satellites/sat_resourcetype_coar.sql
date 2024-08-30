@@ -1,16 +1,14 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: "stg_resource_type_coar"
-src_pk: "coar_uri_hk"
+source_model: "stg_resourcetype_coar"
+src_pk: "resourcetype_hk"
 src_hashdiff: 
-  source_column: "item_hashdiff"
+  source_column: "resourcetype_hashdiff"
   alias: "hashdiff"
 src_payload:
     - label
-    - parent_label_1
-    - parent_label_2
-    - parent_label_3
+    - coar
     - label_es
 src_ldts: "load_datetime"
 src_source: "source"

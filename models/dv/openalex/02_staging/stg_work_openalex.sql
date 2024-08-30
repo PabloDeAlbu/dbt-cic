@@ -21,8 +21,8 @@ hashed_columns:
     - mag
     - pmid
     - pmcid
-  work_type_hk: type
-  work2work_type_hk:
+  worktype_hk: type
+  work2worktype_hk:
     - work_id
     - type
   language_hk: language

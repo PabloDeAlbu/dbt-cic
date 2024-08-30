@@ -1,9 +1,9 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_resource_type_coar'
-src_pk: coar_uri_hk
-src_nk: coar_uri
+source_model: 'stg_worktype_openalex'
+src_pk: worktype_hk
+src_nk: worktype_display_name
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}

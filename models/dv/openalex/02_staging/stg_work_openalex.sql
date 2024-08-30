@@ -15,7 +15,7 @@ hashed_columns:
   mag_hk: mag
   pmid_hk: pmid
   pmcid_hk: pmcid
-  work2id_hk:
+  sal_work_hk:
     - work_id
     - doi
     - mag

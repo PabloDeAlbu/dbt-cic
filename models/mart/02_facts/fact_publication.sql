@@ -12,7 +12,7 @@ WITH base as (
         hub_mag.mag,
         hub_pmcid.pmcid,
         hub_pmid.pmid,
-        hub_work_type.key_display_name
+        hub_work_type.work_type_display_name as work_type
     FROM {{ref('sal_work_openalex')}} sal_work
     INNER JOIN {{ref('sat_work_openalex')}} sat_work ON sal_work.work_hk = sat_work.work_hk
     INNER JOIN {{ref('hub_doi_openalex')}} hub_doi ON hub_doi.doi_hk = sal_work.doi_hk

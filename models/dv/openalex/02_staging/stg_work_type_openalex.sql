@@ -7,7 +7,7 @@ derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  work_type_hk: key_display_name
+  work_type_hk: work_type_display_name
 
 {%- endset -%}
 

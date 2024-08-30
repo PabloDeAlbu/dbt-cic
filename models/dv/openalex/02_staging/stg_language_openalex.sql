@@ -7,7 +7,7 @@ derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  language_hk: key
+  language_hk: language_id
 
 {%- endset -%}
 

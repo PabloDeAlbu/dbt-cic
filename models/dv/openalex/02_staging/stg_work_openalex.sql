@@ -10,29 +10,29 @@ derived_columns:
   start_date: publication_date
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  work_hk: id
+  work_hk: work_id
   doi_hk: doi
   mag_hk: mag
   pmid_hk: pmid
   pmcid_hk: pmcid
   work2id_hk:
-    - id
+    - work_id
     - doi
     - mag
     - pmid
     - pmcid
   work_type_hk: type
   work2work_type_hk:
-    - id
+    - work_id
     - type
   language_hk: language
   work2language_hk:
-    - id
+    - work_id
     - language
   work_hashdiff:
     is_hashdiff: true
     columns:
-      - id
+      - work_id
       - doi
       - title
       - display_name

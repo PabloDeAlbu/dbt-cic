@@ -7,18 +7,18 @@ derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  work_hk: id
+  work_hk: work_id
   source_hk: source_id
   work_source_hk:
-    - id
+    - work_id
     - source_id
   source_type_hk: source_type
   work_source_type:
-    - id
+    - work_id
     - source_type
   source_host_organization_hk: source_host_organization
   work_source_host_organization:
-    - id
+    - work_id
     - source_host_organization
   license_hk: license
   version_hk: version

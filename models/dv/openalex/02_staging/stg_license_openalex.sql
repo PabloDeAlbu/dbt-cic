@@ -7,7 +7,7 @@ derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  license_hk: key
+  license_hk: license_id
 
 {%- endset -%}
 

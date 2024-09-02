@@ -7,9 +7,11 @@ src_hashdiff:
   source_column: "resourcetype_hashdiff"
   alias: "hashdiff"
 src_payload:
-    - label
-    - coar
     - label_es
+    - label
+    - parent_label_1
+    - parent_label_2
+    - parent_label_3
 src_ldts: "load_datetime"
 src_source: "source"
 {%- endset -%}

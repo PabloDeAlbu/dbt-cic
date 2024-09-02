@@ -1,6 +1,6 @@
 {{ config(materialized='incremental') }}
 
-{%- set source_model = "stg_resourcetype_coar" -%}
+{%- set source_model = "stg_resourcetype_coar2worktype_openalex" -%}
 {%- set src_pk = "sal_resourcetype_hk" -%}
 {%- set src_fk = ["resourcetype_hk", "worktype_hk"] -%}
 {%- set src_ldts = "load_datetime" -%}

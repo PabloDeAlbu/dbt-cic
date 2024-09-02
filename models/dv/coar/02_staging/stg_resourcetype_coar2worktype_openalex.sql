@@ -1,21 +1,21 @@
 {{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
-source_model: 'raw_resourcetype_coar'
+source_model: 'map_resourcetype_coar2worktype_openalex'
 derived_columns:
   source: "!SEED"
   load_datetime: load_datetime
 hashed_columns:
   resourcetype_hk: resourcetype_id
+  worktype_hk: worktype
+  sal_resourcetype_hk:
+    - resourcetype_id
+    - worktype
   resourcetype_hashdiff:
     is_hashdiff: true
     columns:
       - resourcetype_id
-      - label
-      - parent_label_1
-      - parent_label_2
-      - parent_label_3
-      - label_es
+      - worktype
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

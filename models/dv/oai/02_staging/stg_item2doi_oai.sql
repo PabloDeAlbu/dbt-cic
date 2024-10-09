@@ -2,16 +2,16 @@
 
 {%- set yaml_metadata -%}
 source_model: 
-  'oai': 'item_issn'
+  'oai': 'item2doi'
 derived_columns:
   source: "!OAI"
   load_datetime: load_datetime
 hashed_columns:
   handle_hk: handle
-  issn_hk: issn
-  handle_issn_hk: 
+  doi_hk: doi
+  handle_doi_hk: 
     - handle
-    - issn
+    - doi
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

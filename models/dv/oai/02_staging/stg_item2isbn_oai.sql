@@ -2,7 +2,7 @@
 
 {%- set yaml_metadata -%}
 source_model: 
-  'oai': 'item_isbn'
+  'oai': 'item2isbn'
 derived_columns:
   source: "!OAI"
   load_datetime: load_datetime

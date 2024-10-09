@@ -17,7 +17,7 @@ WITH type_snrd AS (
 map2snrd AS (
     SELECT
         *
-    FROM {{ref('snrd-types2coar-types')}}
+    FROM {{ref('seed_types_snrd2types_coar')}}
     ORDER BY type
 ),
 

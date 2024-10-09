@@ -1,6 +1,6 @@
 {{ config(materialized='incremental') }}
 
-{%- set source_model = "stg_item_doi_oai" -%}
+{%- set source_model = "stg_item2doi_oai" -%}
 {%- set src_pk = "handle_doi_hk" -%}
 {%- set src_fk = ["handle_hk", "doi_hk"] -%}
 {%- set src_ldts = "load_datetime" -%}

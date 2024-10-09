@@ -30,6 +30,10 @@ hashed_columns:
   item_owningcollection_hk:
     - uuid
     - owning_collection
+  type_hk: type
+  item_type_hk:
+    - uuid
+    - type
   item_hashdiff:
     is_hashdiff: true
     columns:
@@ -43,6 +47,7 @@ hashed_columns:
       - load_datetime
       - title
       - title_lang
+      - type
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

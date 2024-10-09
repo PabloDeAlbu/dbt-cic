@@ -33,31 +33,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   # Config indicated by + and applies to all files under models/example/
   dbt_unlp:
+    +materialized: "table"
     dv:
       coar:
-        +materialized: "view"
         +schema: coar
       ir:
-        +materialized: "view"
         +schema: ir
       oai:
-        +materialized: "view"
         +schema: oai
       openaire:
-        +materialized: "view"
         +schema: openaire
       openalex:
-        +materialized: "view"
         +schema: openalex
-    mart:
-      01_dimensions:
-        +schema: mart
-        +materialized: "table"
-      02_fact:
-        +schema: mart
-        +materialized: "table"
-      
-      
 
 seeds:
   dbt_unlp:
@@ -71,3 +58,6 @@ seeds:
       +schema: ir
     oai:
       +schema: oai
+
+vars:
+    "dbt_date:time_zone": "America/Argentina/Buenos_Aires"

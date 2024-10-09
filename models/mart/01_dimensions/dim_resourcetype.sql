@@ -1,6 +1,7 @@
 WITH base AS (
     SELECT 
         sal_resourcetype_coar.resourcetype_hk,
+        sal_resourcetype_coar.worktype_hk,
         sat_resourcetype_coar.label_es as label,
         hub_worktype_openalex.worktype_display_name as worktype_openalex,
         sat_resourcetype_coar.label as coar_label,

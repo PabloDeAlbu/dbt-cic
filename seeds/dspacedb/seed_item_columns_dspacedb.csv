@@ -1,0 +1,7 @@
+column,short_id,element,qualifier
+dateissued,dc,date,issued
+doi,sedici,identifier,other
+handle,dc,identifier,uri
+title,dc,title,
+type,dc,type,
+subtype,sedici,subtype,

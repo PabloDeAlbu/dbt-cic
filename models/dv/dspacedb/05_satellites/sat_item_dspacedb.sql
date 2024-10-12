@@ -10,9 +10,6 @@ src_payload:
   - title
   - title_lang
   - dateissued
-  - type
-  - doi
-  - handle
 src_eff: "load_datetime"
 src_ldts: "load_datetime"
 src_source: "source"

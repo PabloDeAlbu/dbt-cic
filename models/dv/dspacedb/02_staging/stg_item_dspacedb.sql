@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "ldg_item_dspacedb"
+source_model: "norm_item_dspacedb"
 derived_columns:
   source: "!IR_DSPACEDB"
   load_datetime: load_datetime
@@ -9,30 +9,30 @@ derived_columns:
   start_date: last_modified
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  item_hk: uuid
+  item_hk: item_pk
   doi_hk: doi
   item_doi_hk:
-    - uuid
+    - item_pk
     - doi
   handle_hk: handle
   item_handle_hk:
-    - uuid
+    - item_pk
     - handle
   sal_item_hk:
-    - uuid
+    - item_pk
     - doi
     - handle  
   submitter_hk: submitter_id
   item_submitter_hk:
-    - uuid
+    - item_pk
     - submitter_id
   owningcollection_hk: owning_collection
   item_owningcollection_hk:
-    - uuid
+    - item_pk
     - owning_collection
   type_hk: type
   item_type_hk:
-    - uuid
+    - item_pk
     - type
   item_hashdiff:
     is_hashdiff: true
@@ -41,7 +41,7 @@ hashed_columns:
       - withdrawn
       - last_modified
       - discoverable
-      - uuid
+      - item_pk
       - submitter_id
       - owning_collection
       - load_datetime

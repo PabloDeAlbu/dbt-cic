@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: dspacedb
     description: 'DSpace database'
-    database: staging
+    database: dw_unlp
     schema: ldg_dspacedb
     tables:
       - name: bitstream

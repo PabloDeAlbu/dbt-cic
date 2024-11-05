@@ -3,8 +3,8 @@ version: 2
 sources:
   - name: openalex
     description: 'Openalex works'
-    database: staging
-    schema: stg_openalex
+    database: dw_cic
+    schema: ldg_openalex
     tables:
       - name: author
       - name: institution

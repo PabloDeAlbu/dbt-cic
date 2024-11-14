@@ -9,30 +9,30 @@ derived_columns:
   start_date: last_modified
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  item_hk: item_pk
+  item_hk: uuid
   doi_hk: doi
   item_doi_hk:
-    - item_pk
+    - uuid
     - doi
   handle_hk: handle
   item_handle_hk:
-    - item_pk
+    - uuid
     - handle
   sal_item_hk:
-    - item_pk
+    - uuid
     - doi
     - handle  
   submitter_hk: submitter_id
   item_submitter_hk:
-    - item_pk
+    - uuid
     - submitter_id
   owningcollection_hk: owning_collection
   item_owningcollection_hk:
-    - item_pk
+    - uuid
     - owning_collection
   type_hk: type
   item_type_hk:
-    - item_pk
+    - uuid
     - type
   item_hashdiff:
     is_hashdiff: true
@@ -41,7 +41,7 @@ hashed_columns:
       - withdrawn
       - last_modified
       - discoverable
-      - item_pk
+      - uuid
       - submitter_id
       - owning_collection
       - load_datetime

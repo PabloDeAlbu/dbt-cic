@@ -2,7 +2,7 @@
 
 WITH base AS (
     SELECT 
-        i.item_pk,
+        i.uuid,
         COALESCE(doi.doi, 'NOT_SET') as doi,
         COALESCE(handle.handle, 'NOT_SET') as handle,
         dateissued.dateissued,
@@ -17,11 +17,11 @@ WITH base AS (
         submitter_id,
         withdrawn
     FROM {{ source('dspacedb', 'item') }} i
-    INNER JOIN {{ ref('mid_item_title_dspacedb') }} title ON i.item_pk = title.item_pk
-    INNER JOIN {{ ref('mid_item_dateissued_dspacedb') }} dateissued ON i.item_pk = dateissued.item_pk 
-    INNER JOIN {{ ref('mid_item_type_dspacedb') }} type ON i.item_pk = type.item_pk 
-    LEFT JOIN {{ ref('mid_item_doi_dspacedb') }} doi ON i.item_pk = doi.item_pk 
-    INNER JOIN {{ ref('mid_item_handle_dspacedb') }} handle ON i.item_pk = handle.item_pk 
+    INNER JOIN {{ ref('mid_item_title_dspacedb') }} title ON i.uuid = title.uuid
+    INNER JOIN {{ ref('mid_item_dateissued_dspacedb') }} dateissued ON i.uuid = dateissued.uuid 
+    INNER JOIN {{ ref('mid_item_type_dspacedb') }} type ON i.uuid = type.uuid 
+    LEFT JOIN {{ ref('mid_item_doi_dspacedb') }} doi ON i.uuid = doi.uuid 
+    INNER JOIN {{ ref('mid_item_handle_dspacedb') }} handle ON i.uuid = handle.uuid 
 )
 
 SELECT * FROM base

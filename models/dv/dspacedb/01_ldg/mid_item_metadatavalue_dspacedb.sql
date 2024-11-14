@@ -2,7 +2,7 @@
 
 WITH base AS (
     SELECT
-        i.item_pk,
+        i.uuid,
         mv.metadata_value_id,
         mv.metadata_field_id,
         msr.short_id,
@@ -17,7 +17,7 @@ WITH base AS (
     FROM {{ source('dspacedb', 'metadatavalue') }} mv
     INNER JOIN {{ source('dspacedb', 'metadatafieldregistry') }} mfr ON mfr.metadata_field_id = mv.metadata_field_id
     INNER JOIN {{ source('dspacedb', 'metadataschemaregistry') }} msr ON msr.metadata_schema_id = mfr.metadata_schema_id
-    INNER JOIN {{ source('dspacedb', 'item') }} i ON i.item_id = mv.resource_id and mv.resource_type_id = 2
+    INNER JOIN {{ source('dspacedb', 'item') }} i ON i.uuid = mv.dspace_object_id
 
 )
 

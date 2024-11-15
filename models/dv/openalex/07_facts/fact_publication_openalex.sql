@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 WITH base as (
     SELECT
         sal_work.work_hk,
@@ -41,7 +43,7 @@ WITH base as (
         hub_mag.mag,
         hub_pmcid.pmcid,
         hub_pmid.pmid,
-        dim_resourcetype.label as worktype_label
+        dim_resourcetype_openalex.worktype_display_name as worktype_label
     FROM {{ref('sal_work_openalex')}} sal_work
     INNER JOIN {{ref('sat_work_openalex')}} sat_work_openalex ON sal_work.work_hk = sat_work_openalex.work_hk
     INNER JOIN {{ref('hub_doi_openalex')}} hub_doi ON hub_doi.doi_hk = sal_work.doi_hk
@@ -49,7 +51,7 @@ WITH base as (
     INNER JOIN {{ref('hub_pmcid_openalex')}} hub_pmcid ON hub_pmcid.pmcid_hk = sal_work.pmcid_hk
     INNER JOIN {{ref('hub_pmid_openalex')}} hub_pmid ON hub_pmid.pmid_hk = sal_work.pmid_hk
     INNER JOIN {{ref('link_work2worktype_openalex')}} ON link_work2worktype_openalex.work_hk = sal_work.work_hk
-    INNER JOIN {{ref('dim_resourcetype')}} ON dim_resourcetype.worktype_hk = link_work2worktype_openalex.worktype_hk
+    INNER JOIN {{ref('dim_resourcetype_openalex')}} ON dim_resourcetype_openalex.worktype_hk = link_work2worktype_openalex.worktype_hk
 )
 
 SELECT * FROM base

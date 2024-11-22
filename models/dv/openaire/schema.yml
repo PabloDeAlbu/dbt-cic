@@ -3,7 +3,9 @@ version: 2
 sources:
   - name: openaire
     description: 'Openaire research product'
-    database: staging
+    database: dw_cic
     schema: ldg_openaire
     tables:
       - name: researchproduct
+      - name: researchproduct2measure
+      - name: researchproduct2pid

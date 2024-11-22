@@ -1,37 +1,22 @@
-WITH base AS (
-    SELECT 
-        sal.id as openaire_id,
-        sal.arxiv,
-        sal.doi,
-        sal.ena,
-        sal.pdb,
-        sal.pmc,
-        sal.pmid,
-        sal.uniprot,
-        dim_resourcetype.openaire_resourcetype,
-        dim_resourcetype.coar_label,
-        dim_resourcetype.coar_label_es,
-        dim_resourcetype.coar,
-        sat.bestaccessright,
-        sat.dateofacceptance,
-        sat.publisher,
-        sat.resulttype,
-        sat.resourcetype,
-        sat.isgreen,
-        sat.openaccesscolor,
-        sat.isindiamondjournal,
-        sat.publiclyfunded,
-        sal.load_datetime
-    FROM {{ref('sal_researchproduct_openaire')}} sal
-    INNER JOIN {{ref('sat_researchproduct_openaire')}} sat ON sal.researchproduct_hk = sat.researchproduct_hk
-    INNER JOIN {{ref('link_researchproduct_resourcetype_openaire')}} link_researchproduct_resourcetype ON sal.researchproduct_hk = link_researchproduct_resourcetype.researchproduct_hk
-    INNER JOIN {{ref('dim_resourcetype_openaire')}} dim_resourcetype ON dim_resourcetype.resourcetype_hk = link_researchproduct_resourcetype.resourcetype_hk
-),
+{{ config(materialized='table') }}
 
-final AS (
+WITH base as (
     SELECT
-    *
-    FROM base
+        sal_researchproduct.researchproduct_hk,
+        hub_arxiv.arxiv,
+        hub_doi.doi,
+        hub_handle.handle,
+        hub_mag.mag,
+        hub_pmc.pmc,
+        hub_pmid.pmid
+    FROM {{ref('sal_openaire_researchproduct')}} sal_researchproduct
+--    INNER JOIN {{ref('sat_openaire_researchproduct')}} sat_openaire_researchproduct ON sal_researchproduct.researchproduct_hk = sat_openaire_researchproduct.researchproduct_hk
+    INNER JOIN {{ref('hub_openaire_arxiv')}} hub_arxiv ON hub_arxiv.arxiv_hk = sal_researchproduct.arxiv_hk
+    INNER JOIN {{ref('hub_openaire_doi')}} hub_doi ON hub_doi.doi_hk = sal_researchproduct.doi_hk
+    INNER JOIN {{ref('hub_openaire_handle')}} hub_handle ON hub_handle.handle_hk = sal_researchproduct.handle_hk
+    INNER JOIN {{ref('hub_openaire_mag')}} hub_mag ON hub_mag.mag_hk = sal_researchproduct.mag_hk
+    INNER JOIN {{ref('hub_openaire_pmc')}} hub_pmc ON hub_pmc.pmc_hk = sal_researchproduct.pmc_hk
+    INNER JOIN {{ref('hub_openaire_pmid')}} hub_pmid ON hub_pmid.pmid_hk = sal_researchproduct.pmid_hk
 )
 
-SELECT * FROM final
+SELECT * FROM base

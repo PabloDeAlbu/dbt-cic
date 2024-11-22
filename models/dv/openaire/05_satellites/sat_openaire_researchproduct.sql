@@ -1,17 +1,16 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: "stg_researchproduct_openaire"
+source_model: "stg_openaire_researchproduct"
 src_pk: "researchproduct_hk"
 src_hashdiff:
   source_column: "researchproduct_hashdiff"
   alias: "hashdiff"
 src_payload:
-  - bestaccessright
+  - dateofcollection
   - dateofacceptance
+  - description
   - publisher
-  - resulttype
-  - resourcetype
   - isgreen
   - openaccesscolor
   - isindiamondjournal

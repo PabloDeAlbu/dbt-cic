@@ -1,14 +1,14 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_researchproduct_openaire'
-src_pk: resourcetype_hk
-src_nk: resourcetype
+source_model: 'stg_openaire_researchproduct2pid'
+src_pk: researchproduct_hk
+src_nk: id
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}
 
-with base as (
+WITH base AS (
     {% set metadata_dict = fromyaml(yaml_metadata) %}
     {{ automate_dv.hub(src_pk=metadata_dict["src_pk"],
                     src_nk=metadata_dict["src_nk"], 
@@ -17,9 +17,9 @@ with base as (
                     source_model=metadata_dict["source_model"]) }}
 ),
 
-final as (
-    select * 
-    from base
+final AS (
+    SELECT *
+    FROM base
 )
 
-select * from final
+SELECT * FROM final

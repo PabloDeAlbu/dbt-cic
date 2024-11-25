@@ -22,6 +22,7 @@ WITH base AS (
     INNER JOIN {{ ref('mid_item_type_dspacedb') }} type ON i.uuid = type.uuid 
     LEFT JOIN {{ ref('mid_item_doi_dspacedb') }} doi ON i.uuid = doi.uuid 
     INNER JOIN {{ ref('mid_item_handle_dspacedb') }} handle ON i.uuid = handle.uuid 
+    WHERE dateissued.dateissued > '1800-01-01'::timestamp
 )
 
 SELECT * FROM base

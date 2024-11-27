@@ -1,8 +1,7 @@
 {{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
-source_model: 
-  'openalex': 'work'
+source_model: "norm_work_openalex"
 derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
@@ -36,7 +35,6 @@ hashed_columns:
       - doi
       - title
       - display_name
-      - publication_year
       - publication_date
       - language
       - type

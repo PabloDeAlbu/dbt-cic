@@ -9,7 +9,6 @@ src_hashdiff:
 src_payload:
   - title
   - display_name
-  - publication_year
   - publication_date
   - countries_distinct_count
   - institutions_distinct_count

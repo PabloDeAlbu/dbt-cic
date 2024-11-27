@@ -2,7 +2,7 @@
 
 WITH base as (
     SELECT
-        dim_pid.id,
+        CONCAT('https://api.openaire.eu/search/researchProducts?resultID=', dim_pid.id) openaire_url,
         sat.dateofcollection,
         sat.dateofacceptance,
         sat.description,

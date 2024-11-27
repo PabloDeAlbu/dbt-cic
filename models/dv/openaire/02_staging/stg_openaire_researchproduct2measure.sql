@@ -1,37 +1,38 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "norm_openaire_researchproduct2pid"
+source_model: "norm_openaire_researchproduct2measure"
 derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
   researchproduct_hk: id
-  doi_hk: doi
-  pmid_hk: pmid
-  pmc_hk: pmc
-  arxiv_hk: arxiv
-  handle_hk: handle
-  mag_hk: mag
-  researchproduct2pid_hk: 
+  attrank_hk: attrank
+  cc_hk: cc
+  downloads_hk: downloads
+  icc_hk: icc
+  pr_hk: pr
+  ram_hk: ram
+  views_hk: views
+  researchproduct2measure_hk: 
     - id
-    - doi
-    - pmid
-    - pmc
-    - arxiv
-    - handle
-    - mag
-  researchproduct2pid_hashdiff:
+    - attrank
+    - cc
+    - downloads
+    - icc
+    - pr
+    - ram
+    - views
+  researchproduct2measure_hashdiff:
     is_hashdiff: true
     columns:
-      - id
-      - doi
-      - pmid
-      - pmc
-      - arxiv
-      - handle
-      - mag
-
+      - attrank
+      - cc
+      - downloads
+      - icc
+      - pr
+      - ram
+      - views
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

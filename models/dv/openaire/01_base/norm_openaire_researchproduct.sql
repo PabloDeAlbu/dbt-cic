@@ -3,8 +3,8 @@
 with base as (
     SELECT
         id,
-        dateofcollection,
-        dateofacceptance,
+        {{ dbt_date.convert_timezone("dateofcollection") }} as dateofcollection,
+        {{ dbt_date.convert_timezone("dateofacceptance") }} as dateofacceptance,
         description,
         publisher,
         isgreen,

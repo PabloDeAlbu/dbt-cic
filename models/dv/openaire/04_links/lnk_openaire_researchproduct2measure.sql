@@ -1,8 +1,8 @@
 {{ config(materialized='incremental') }}
 
-{%- set source_model = "stg_openaire_researchproduct2pid" -%}
-{%- set src_pk = "researchproduct_hk" -%}
-{%- set src_fk = ["researchproduct_hk","doi_hk", "mag_hk", "pmid_hk", "pmc_hk", "arxiv_hk", "handle_hk"] -%}
+{%- set source_model = "stg_openaire_researchproduct2measure" -%}
+{%- set src_pk = "researchproduct2measure_hk" -%}
+{%- set src_fk = ["researchproduct_hk","attrank_hk", "cc_hk", "downloads_hk", "icc_hk", "pr_hk", "ram_hk", "views_hk"] -%}
 {%- set src_ldts = "load_datetime" -%}
 {%- set src_source = "source" -%}
 

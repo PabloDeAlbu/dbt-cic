@@ -3,12 +3,13 @@
 with base as (
     SELECT
         id,
-        pid_id,
-        pid_text,
+        measure_score,
+        measure_class,
+        measure_datasource,
         load_datetime
     FROM 
-        {{ ref('base_openaire_researchproduct2pid') }} rp
-    WHERE pid_id = 'pmc'
+        {{ ref('base_openaire_researchproduct2measure') }} rp
+    WHERE measure_id = 'views'
 ),
 
 final as (

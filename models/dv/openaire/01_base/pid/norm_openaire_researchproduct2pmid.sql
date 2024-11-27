@@ -3,7 +3,6 @@
 with base as (
     SELECT
         id,
-        pid_id,
         pid_text,
         load_datetime
     FROM 

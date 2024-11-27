@@ -7,7 +7,7 @@ renamed as (
     select
         {{ adapter.quote("dri:objIdentifier") }} as id,
         {{ adapter.quote("@id") }} as measure_id,
-        {{ adapter.quote("@score") }} as measure_score,
+        {{ adapter.quote("@score") }}::float as measure_score,
         {{ adapter.quote("@class") }} as measure_class,
         {{ adapter.quote("@datasource") }} measure_datasource,
         {{ adapter.quote("load_datetime") }}

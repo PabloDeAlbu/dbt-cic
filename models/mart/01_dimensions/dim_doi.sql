@@ -53,8 +53,8 @@ add_openaire AS (
     SELECT
         COALESCE(add_openalex.doi_hk, openaire.doi_hk) as doi_hk,
         COALESCE(add_openalex.doi, openaire.doi) as doi,
-        add_openalex.in_dspacedb,
-        add_openalex.in_openalex,
+        COALESCE(add_openalex.in_dspacedb, False) as in_dspacedb,
+        COALESCE(add_openalex.in_openalex, False) as in_openalex,
         COALESCE(openaire.in_openaire, False) as in_openaire
     FROM add_openalex
     FULL OUTER JOIN hub_doi_openaire openaire ON openaire.doi_hk = add_openalex.doi_hk

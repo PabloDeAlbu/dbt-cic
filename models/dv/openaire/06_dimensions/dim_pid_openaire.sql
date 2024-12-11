@@ -3,7 +3,7 @@
 WITH base as (
     SELECT 
         sal.researchproduct_hk,
-        hub_researchproduct.id,
+        hub_researchproduct.researchproduct_id,
         hub_arxiv.arxiv,
         hub_doi.doi,
         hub_handle.handle,

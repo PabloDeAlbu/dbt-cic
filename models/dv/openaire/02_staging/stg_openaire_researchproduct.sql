@@ -5,23 +5,30 @@ source_model: "norm_openaire_researchproduct"
 derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime
-  effective_from: dateofacceptance
-  start_date: dateofacceptance
+  effective_from: date_acceptance
+  start_date: date_acceptance
   end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
-  researchproduct_hk: id
+  researchproduct_hk: researchproduct_id
   researchproduct_hashdiff:
     is_hashdiff: true
     columns:
-      - id
-      - dateofcollection
-      - dateofacceptance
+      - researchproduct_id
+      - date_collection
+      - date_acceptance
       - description
       - publisher
       - isgreen
       - openaccesscolor
       - isindiamondjournal
       - publiclyfunded
+      - downloads
+      - impulse
+      - influence_alt
+      - influence
+      - popularity_alt
+      - popularity
+      - views
       - load_datetime
 {%- endset -%}
 

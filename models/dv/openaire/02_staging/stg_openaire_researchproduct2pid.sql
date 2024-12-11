@@ -6,7 +6,7 @@ derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
-  researchproduct_hk: id
+  researchproduct_hk: researchproduct_id
   doi_hk: doi
   pmid_hk: pmid
   pmc_hk: pmc
@@ -14,7 +14,7 @@ hashed_columns:
   handle_hk: handle
   mag_hk: mag
   researchproduct2pid_hk: 
-    - id
+    - researchproduct_id
     - doi
     - pmid
     - pmc
@@ -24,7 +24,7 @@ hashed_columns:
   researchproduct2pid_hashdiff:
     is_hashdiff: true
     columns:
-      - id
+      - researchproduct_id
       - doi
       - pmid
       - pmc

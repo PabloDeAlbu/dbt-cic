@@ -6,33 +6,14 @@ derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
-  researchproduct_hk: id
-  attrank_hk: attrank
-  cc_hk: cc
-  downloads_hk: downloads
-  icc_hk: icc
-  pr_hk: pr
-  ram_hk: ram
-  views_hk: views
+  researchproduct_hk: researchproduct_id
   researchproduct2measure_hk: 
-    - id
-    - attrank
-    - cc
+    - researchproduct_id
     - downloads
-    - icc
-    - pr
-    - ram
+    - impulse
+    - influence
+    - popularity_alt 
     - views
-  researchproduct2measure_hashdiff:
-    is_hashdiff: true
-    columns:
-      - attrank
-      - cc
-      - downloads
-      - icc
-      - pr
-      - ram
-      - views
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

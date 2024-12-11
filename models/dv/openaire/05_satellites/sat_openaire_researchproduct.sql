@@ -7,14 +7,21 @@ src_hashdiff:
   source_column: "researchproduct_hashdiff"
   alias: "hashdiff"
 src_payload:
-  - dateofcollection
-  - dateofacceptance
+  - date_collection
+  - date_acceptance
   - description
   - publisher
   - isgreen
   - openaccesscolor
   - isindiamondjournal
   - publiclyfunded
+  - downloads
+  - impulse
+  - influence_alt
+  - influence
+  - popularity_alt
+  - popularity
+  - views
 src_eff: "load_datetime"
 src_ldts: "load_datetime"
 src_source: "source"

@@ -1,19 +1,16 @@
 {{ config(materialized='table') }}
 
-{% set date_id = ["accepted", "created", "issued", "published_online", "published_print", "submitted", "updated"] %}
-
 with base as (
     SELECT
         researchproduct_id,
-        -- Por cada identificador, creamos una columna específica
-        {%- for identifier in date_id %}
-        (CASE WHEN date_id = '{{ identifier }}' THEN date_text ELSE 'NO DATA' END) AS {{ identifier }}
-        {%- if not loop.last %}, {% endif %}
-        {%- endfor %}
+        {{ dbt_date.convert_timezone("date_text") }} as date_text,
+        date_id,
+        is_inferred,
+        provenanceaction,
+        trust,
+        load_datetime
     FROM {{ ref('base_researchproduct2relevantdate_openaire') }}
 ),
-
-
 
 final as (
     select * from base

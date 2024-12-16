@@ -24,12 +24,14 @@ WITH base as (
         dim_pid.handle,
         dim_pid.mag,
         dim_pid.pmc,
-        dim_pid.pmid
+        dim_pid.pmid,
+        dim_date_issued.date_text as date_issued
     FROM {{ref('sal_researchproduct_openaire')}} sal
     INNER JOIN {{ref('sat_researchproduct_openaire')}} sat ON sat.researchproduct_hk = sal.researchproduct_hk
     INNER JOIN {{ref('dim_pid_openaire')}} dim_pid ON dim_pid.researchproduct_hk = sal.researchproduct_hk
     LEFT JOIN {{ref('dim_views_openaire')}} dim_views ON dim_views.researchproduct_hk = sal.researchproduct_hk
     LEFT JOIN {{ref('dim_downloads_openaire')}} dim_downloads ON dim_downloads.researchproduct_hk = sal.researchproduct_hk
+    LEFT JOIN {{ref('dim_date_issued_openaire')}} dim_date_issued ON dim_date_issued.researchproduct_hk = sal.researchproduct_hk
 )
 
 SELECT * FROM base

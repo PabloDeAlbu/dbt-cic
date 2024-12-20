@@ -2,7 +2,7 @@
 
 WITH base as (
     SELECT
-        sal.work_hk,
+        {# sal.work_hk, #}
         dim_pid.work_id as work_url,
         sat.title,
         sat.publication_date as publication_date,

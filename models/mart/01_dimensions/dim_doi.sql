@@ -28,7 +28,7 @@ hub_doi_openaire AS (
         FALSE AS in_dspacedb,
         FALSE AS in_openalex,
         TRUE AS in_openaire
-    FROM {{ref('hub_openaire_doi')}}
+    FROM {{ref('hub_doi_openaire')}}
 ),
 
 base AS (

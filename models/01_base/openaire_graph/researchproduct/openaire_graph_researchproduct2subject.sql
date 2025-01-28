@@ -1,5 +1,5 @@
 with source as (
-        select * from {{ source('openaire_researchproduct_collectedfrom_datasource', 'researchproduct2subject') }}
+        select * from {{ source('openaire_graph_researchproduct', 'researchproduct2subject') }}
   ),
   renamed as (
       select

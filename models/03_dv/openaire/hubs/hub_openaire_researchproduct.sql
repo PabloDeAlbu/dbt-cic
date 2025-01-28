@@ -2,6 +2,7 @@
 
 {%- set yaml_metadata -%}
 source_model: 'stg_researchproduct2pid_openaire'
+--source_model: ["stg_researchproduct2pid_openaire", "stg_openaire_graph_researchproduct"]
 src_pk: researchproduct_hk
 src_nk: researchproduct_id
 src_ldts: load_datetime

@@ -83,7 +83,7 @@ base as (
         openaire.total_views as openaire_total_views,
         COALESCE(add_openalex.publication_date, openaire.date_issued) as publication_date
     FROM add_openalex
-    LEFT JOIN {{ ref('fact_publication_openaire') }} openaire ON openaire.doi = add_openalex.doi
+    LEFT JOIN {{ ref('fact_publication_openaire_search') }} openaire ON openaire.doi = add_openalex.doi
 ),
 
 fact as (

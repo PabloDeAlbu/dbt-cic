@@ -1,10 +1,10 @@
 version: 2
 
 sources:
-  - name: openaire_researchproduct_collectedfrom_datasource
+  - name: openaire_graph_researchproduct
     description: 'Openaire research product collected from datasource'
     database: dw_cic
-    schema: ldg_openaire_collectedfrom_datasource
+    schema: ldg_openaire_graph
     tables:
       - name: researchproduct
       - name: researchproduct2author

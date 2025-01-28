@@ -1,26 +1,16 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "norm_openaire_researchproduct2measure"
+source_model: "openaire_graph_researchproduct2originalid"
 derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
   researchproduct_hk: researchproduct_id
-  measure_hk: measure_id
-  datasource_hk: measure_datasource
-  researchproduct2measure_hk:
+  original_hk: original_id
+  researchproduct2originalid_hk:
     - researchproduct_id
-    - measure_id
-    - measure_datasource
-  researchproduct2measure_hashdiff:
-    is_hashdiff: true
-    columns:
-      - researchproduct_id
-      - measure_id
-      - measure_score
-      - measure_class
-      - measure_datasource
+    - original_id
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

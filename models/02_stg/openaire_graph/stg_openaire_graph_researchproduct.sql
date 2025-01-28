@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "openaire_researchproduct_collectedfrom_datasource"
+source_model: "openaire_graph_researchproduct"
 derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime
@@ -24,14 +24,14 @@ hashed_columns:
       - language_code
       - language_label
       - best_access_right
-      - citation_impact_class
-      - citation_impact_count
-      - citation_impact_impulse
-      - citation_impact_impulse_class
-      - citation_impact_influence
-      - citation_impact_influence_class
-      - citation_impact_popularity
-      - citation_impact_popularity_class
+      - citation_class
+      - citation_count
+      - impulse
+      - impulse_class
+      - influence
+      - influence_class
+      - popularity
+      - popularity_class
       - load_datetime
 {%- endset -%}
 

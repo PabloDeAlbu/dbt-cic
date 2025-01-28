@@ -1,13 +1,30 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: "stg_researchproduct2measure_openaire"
-src_pk: "researchproduct2measure_hk"
+source_model: "stg_openaire_graph_researchproduct"
+src_pk: "researchproduct_hk"
 src_hashdiff:
-  source_column: "researchproduct2measure_hashdiff"
+  source_column: "researchproduct_hashdiff"
   alias: "hashdiff"
 src_payload:
-  - measure_score
+  - publicly_funded
+  - type
+  - main_title
+  - publication_date
+  - is_green
+  - is_in_diamond_journal
+  - language_code
+  - language_label
+  - best_access_right
+  - citation_class
+  - citation_count
+  - impulse
+  - impulse_class
+  - influence
+  - influence_class
+  - popularity
+  - popularity_class
+  - load_datetime
 src_eff: "load_datetime"
 src_ldts: "load_datetime"
 src_source: "source"

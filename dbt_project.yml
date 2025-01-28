@@ -34,11 +34,7 @@ models:
   dbt_unlp:
     01_base:
       +materialized: table
-      openaire:
-        researchproduct:
-          +schema: openaire_researchproduct
-        researchproduct_collectedfrom_datasource:
-          +schema: openaire_researchproduct_collectedfrom_datasource
+      +schema: base
     02_stg:
       +materialized: view
       coar:
@@ -49,6 +45,8 @@ models:
         +schema: oai
       openaire:
         +schema: openaire
+      openaire_graph:
+        +schema: openaire_graph
       openalex:
         +schema: openalex
     03_dv:
@@ -61,10 +59,12 @@ models:
         +schema: oai
       openaire:
         +schema: openaire
+      openaire_graph:
+        +schema: openaire_graph
       openalex:
         +schema: openalex
     04_dm:
-      +materialized: incremental
+      +materialized: table
 
 seeds:
   dbt_unlp:

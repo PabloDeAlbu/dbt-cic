@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: openaire_graph_researchproduct
     description: 'Openaire research product collected from datasource'
-    database: dw_cic
+    database: dw_unlp
     schema: ldg_openaire_graph
     tables:
       - name: researchproduct

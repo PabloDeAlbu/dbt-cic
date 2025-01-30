@@ -33,6 +33,10 @@ hashed_columns:
       - popularity
       - popularity_class
       - load_datetime
+      - downloads
+      - views
+      - publisher
+      - embargo_end_date
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

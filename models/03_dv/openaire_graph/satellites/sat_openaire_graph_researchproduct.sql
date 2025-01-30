@@ -24,6 +24,10 @@ src_payload:
   - influence_class
   - popularity
   - popularity_class
+  - downloads
+  - views
+  - publisher
+  - embargo_end_date
   - load_datetime
 src_eff: "load_datetime"
 src_ldts: "load_datetime"

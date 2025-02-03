@@ -1,6 +1,7 @@
 with base as (
     SELECT 
         resourcetype_id,
+        label_es,
         label,
         parent_label_1,
         parent_label_2,

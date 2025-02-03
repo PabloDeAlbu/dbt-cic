@@ -1,14 +1,16 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: 
-  'openalex': 'license'
+source_model: "openaire_graph_researchproduct2pmid"
 derived_columns:
-  source: "!OPENALEX"
+  source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
-  license_hk: license_id
-
+  researchproduct_hk: researchproduct_id
+  pmid_hk: pmid
+  researchproduct2pmid_hk:
+    - researchproduct_id
+    - pmid
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

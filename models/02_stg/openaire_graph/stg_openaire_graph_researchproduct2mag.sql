@@ -1,25 +1,16 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "base_author_openalex"
+source_model: "openaire_graph_researchproduct2mag"
 derived_columns:
-  source: "!OPENALEX"
+  source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
-  author_hk: author_id
-  orcid_hk: orcid
-  author2orcid_hk:
-  - author_id
-  - orcid
-  author_hashdiff:
-    is_hashdiff: true
-    columns:
-      - author_id
-      - orcid
-      - display_name
-      - works_count
-      - cited_by_count
-
+  researchproduct_hk: researchproduct_id
+  mag_hk: mag
+  researchproduct2mag_hk:
+    - researchproduct_id
+    - mag
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

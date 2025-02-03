@@ -1,14 +1,16 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: 
-  'openalex': 'language'
+source_model: "openaire_graph_researchproduct2arxiv"
 derived_columns:
-  source: "!OPENALEX"
+  source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
-  language_hk: language_id
-
+  researchproduct_hk: researchproduct_id
+  arxiv_hk: arxiv
+  researchproduct2arxiv_hk:
+    - researchproduct_id
+    - arxiv
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

@@ -1,4 +1,9 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='materialized_view',
+    indexes=[
+      {'columns': ['doi'], 'type': 'hash'},
+    ]
+) }}
 
 WITH base as (
     SELECT
@@ -24,9 +29,16 @@ WITH base as (
         sat_graph.downloads,
         sat_graph.views,
         sat_graph.publisher,
-        sat_graph.embargo_end_date
+        sat_graph.embargo_end_date,
+        dim_pid.arxiv,
+        dim_pid.doi,
+        dim_pid.handle,
+        dim_pid.mag,
+        dim_pid.pmc,
+        dim_pid.pmid
     FROM {{ref('hub_openaire_graph_researchproduct')}} hub
     INNER JOIN {{ref('sat_openaire_graph_researchproduct')}} sat_graph ON sat_graph.researchproduct_hk = hub.researchproduct_hk
+    INNER JOIN {{ref('dim_pid_openaire_graph')}} dim_pid ON dim_pid.researchproduct_hk = hub.researchproduct_hk
 )
 
 SELECT * FROM base

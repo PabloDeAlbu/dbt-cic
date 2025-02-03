@@ -1,14 +1,16 @@
 {{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
-source_model: 
-  'openalex': 'worktype'
+source_model: 'base_work2author_openalex'
 derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  worktype_hk: worktype_display_name
-
+  work_hk: work_id
+  author_hk: author_id
+  work2author_hk:
+  - work_id
+  - author_id
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

@@ -1,25 +1,22 @@
 {{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
-source_model: "base_author_openalex"
+source_model: 'base_openalex_work2ids'
 derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  author_hk: author_id
-  orcid_hk: orcid
-  author2orcid_hk:
-  - author_id
-  - orcid
-  author_hashdiff:
-    is_hashdiff: true
-    columns:
-      - author_id
-      - orcid
-      - display_name
-      - works_count
-      - cited_by_count
-
+  work_hk: work_id
+  doi_hk: doi
+  mag_hk: mag
+  pmcid_hk: pmcid
+  pmid_hk: pmid
+  work2ids_hk:
+    - work_id
+    - doi
+    - mag
+    - pmcid
+    - pmid
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

@@ -24,12 +24,12 @@ base as (
         researchproduct_id::varchar,
         {{ dbt_date.convert_timezone("date_collection") }} as date_collection,
         {{ dbt_date.convert_timezone("date_acceptance") }} as date_acceptance,
-        description,
-        publisher,
-        isgreen,
-        COALESCE(openaccesscolor, 'NO DATA') as openaccesscolor,
-        COALESCE(isindiamondjournal::varchar, 'NO DATA') as isindiamondjournal,
-        COALESCE(publiclyfunded::varchar, 'NO DATA') as publiclyfunded,
+        COALESCE(description, 'NO DATA')::varchar as description,
+        COALESCE(publisher, 'NO DATA')::varchar as publisher,
+        COALESCE(isgreen::boolean, False) as isgreen,
+        COALESCE(openaccesscolor, 'NO DATA')::varchar as openaccesscolor,
+        COALESCE(isindiamondjournal, 'NO DATA')::varchar as isindiamondjournal,
+        COALESCE(publiclyfunded, 'NO DATA')::varchar as publiclyfunded,
         -- TODO agregar métricas de impacto
         load_datetime
     FROM

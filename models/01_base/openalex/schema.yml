@@ -3,7 +3,6 @@ version: 2
 sources:
   - name: openalex
     description: 'Openalex works'
-    database: dw_cic
     schema: ldg_openalex
     tables:
       - name: author
@@ -14,9 +13,10 @@ sources:
       - name: language
       - name: license
       - name: work
-      - name: work2authorship
+      - name: work2author
       - name: work2concept
       - name: work2corresponding_author_ids
+      - name: work2ids
       - name: work2primary_location
       - name: work2primary_topics
       - name: work2referenced_works

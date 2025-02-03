@@ -1,27 +1,16 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: 
-  'openalex': 'work2location'
+source_model: "openaire_graph_researchproduct2handle"
 derived_columns:
-  source: "!OPENALEX"
+  source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
-  work_hk: work_id
-  source_hk: source_id
-  work_source_hk:
-    - work_id
-    - source_id
-  source_type_hk: source_type
-  work_source_type:
-    - work_id
-    - source_type
-  source_host_organization_hk: source_host_organization
-  work_source_host_organization:
-    - work_id
-    - source_host_organization
-  license_hk: license
-  version_hk: version
+  researchproduct_hk: researchproduct_id
+  handle_hk: handle
+  researchproduct2handle_hk:
+    - researchproduct_id
+    - handle
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

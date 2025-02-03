@@ -1,4 +1,4 @@
-{{ config(materialized='incremental') }}
+{# {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
 source_model: "stg_work2authorship_openalex"
@@ -24,4 +24,5 @@ src_source: "source"
                    src_eff=metadata_dict["src_eff"],
                    src_ldts=metadata_dict["src_ldts"],
                    src_source=metadata_dict["src_source"],
-                   source_model=metadata_dict["source_model"])   }}
+                   source_model=metadata_dict["source_model"])   }} #}
+SELECT 1

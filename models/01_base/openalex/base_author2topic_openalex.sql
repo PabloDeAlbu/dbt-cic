@@ -10,8 +10,9 @@ renamed as (
         {{ adapter.quote("field_id") }},
         {{ adapter.quote("subfield_id") }},
         {{ adapter.quote("load_datetime") }}
-
     from source
 )
+
+
 select * from renamed
   

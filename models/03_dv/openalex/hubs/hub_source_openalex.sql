@@ -1,7 +1,7 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_work2location_openalex'
+source_model: 'stg_work2source_openalex'
 src_pk: source_hk
 src_nk: source_id
 src_ldts: load_datetime

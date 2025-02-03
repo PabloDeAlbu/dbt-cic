@@ -1,8 +1,8 @@
 {{ config(materialized='incremental') }}
 
-{%- set source_model = "stg_work2ids_openalex" -%}
-{%- set src_pk = "work2ids_hk" -%}
-{%- set src_fk = ["work_hk","doi_hk", "mag_hk", "pmid_hk", "pmcid_hk"] -%}
+{%- set source_model = "stg_openaire_graph_researchproduct2pmid" -%}
+{%- set src_pk = "researchproduct2pmid_hk" -%}
+{%- set src_fk = ["researchproduct_hk","pmid_hk"] -%}
 {%- set src_ldts = "load_datetime" -%}
 {%- set src_source = "source" -%}
 

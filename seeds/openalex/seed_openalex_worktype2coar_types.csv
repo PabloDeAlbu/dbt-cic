@@ -1,0 +1,18 @@
+type,label_es,coar_uri
+article,ARTÍCULO,http://purl.org/coar/resource_type/c_6501
+book,LIBRO,http://purl.org/coar/resource_type/c_2f33
+book-chapter,CAPÍTULO DE LIBRO,http://purl.org/coar/resource_type/c_3248
+dataset,CONJUNTO DE DATOS,http://purl.org/coar/resource_type/c_ddb1
+dissertation,TESIS DOCTORAL,http://purl.org/coar/resource_type/c_db06
+editorial,EDITORIAL,http://purl.org/coar/resource_type/c_b239
+erratum,CORRIGENDA,http://purl.org/coar/resource_type/c_7acd
+letter,CARTA,http://purl.org/coar/resource_type/c_0857
+other,OTROS,http://purl.org/coar/resource_type/c_1843
+paratext,OTROS,http://purl.org/coar/resource_type/c_1843
+peer-review,REVISIÓN POR PARES,http://purl.org/coar/resource_type/H9BQ-739P
+preprint,ARTÍCULO PRELIMINAR,http://purl.org/coar/resource_type/c_816b
+reference-entry,,#N/A
+report,INFORME,http://purl.org/coar/resource_type/c_93fc
+retraction,,#N/A
+review,RESEÑA,http://purl.org/coar/resource_type/c_efa0
+,,#N/A

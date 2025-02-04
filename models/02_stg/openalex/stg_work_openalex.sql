@@ -12,6 +12,9 @@ hashed_columns:
   work_hk: work_id
   doi_hk: doi
   type_hk: type
+  work2type_hk:
+    - work_id
+    - type
   work_hashdiff:
     is_hashdiff: true
     columns:
@@ -21,7 +24,6 @@ hashed_columns:
       - display_name
       - language
       - type
-      - type_crossref
       - fulltext_origin
       - cited_by_api_url
       - has_fulltext

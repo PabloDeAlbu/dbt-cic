@@ -13,7 +13,6 @@ src_payload:
   - display_name
   - language
   - type
-  - type_crossref
   - fulltext_origin
   - cited_by_api_url
   - has_fulltext

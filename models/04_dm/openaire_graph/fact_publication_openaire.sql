@@ -10,7 +10,6 @@ WITH base as (
         hub.researchproduct_id as researchproduct_id,
         {# sat.description, #}
         sat_graph.publicly_funded,
-        sat_graph.type,
         sat_graph.main_title,
         sat_graph.publication_date,
         sat_graph.is_green,
@@ -35,10 +34,14 @@ WITH base as (
         dim_pid.handle,
         dim_pid.mag,
         dim_pid.pmc,
-        dim_pid.pmid
+        dim_pid.pmid,
+        dim_type.openaire_type,
+        dim_type.coar_label_es
     FROM {{ref('hub_openaire_graph_researchproduct')}} hub
     INNER JOIN {{ref('sat_openaire_graph_researchproduct')}} sat_graph ON sat_graph.researchproduct_hk = hub.researchproduct_hk
     INNER JOIN {{ref('dim_pid_openaire_graph')}} dim_pid ON dim_pid.researchproduct_hk = hub.researchproduct_hk
+    INNER JOIN {{ref('link_openaire_graph_researchproduct2type')}} link ON link.researchproduct_hk = hub.researchproduct_hk
+    INNER JOIN {{ref('dim_resourcetype_openaire')}} dim_type ON dim_type.type_hk = link.type_hk
 )
 
 SELECT * FROM base

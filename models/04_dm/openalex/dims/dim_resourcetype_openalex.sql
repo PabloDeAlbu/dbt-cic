@@ -3,7 +3,7 @@
 WITH base as (
     SELECT
         hub.type_hk,
-        hub.type,
+        hub.type as openalex_type,
         map.coar_label_es,
         map.coar_uri
     FROM {{ref('hub_worktype_openalex')}} hub

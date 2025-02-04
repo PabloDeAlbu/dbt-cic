@@ -8,7 +8,6 @@ src_hashdiff:
   alias: "hashdiff"
 src_payload:
   - publicly_funded
-  - type
   - main_title
   - publication_date
   - is_green

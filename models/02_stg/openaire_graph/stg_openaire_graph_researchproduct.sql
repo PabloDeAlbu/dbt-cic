@@ -10,12 +10,15 @@ derived_columns:
 --  end_date: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:
   researchproduct_hk: researchproduct_id
+  type_hk: type
+  researchproduct2type_hk:
+    - researchproduct_id
+    - type
   researchproduct_hashdiff:
     is_hashdiff: true
     columns:
       - open_access_color
       - publicly_funded
-      - type
       - main_title
       - publication_date
       - researchproduct_id

@@ -14,7 +14,10 @@ src_payload:
   - language
   - type
   - fulltext_origin
+  - oa_status
+  - oa_url
   - cited_by_api_url
+  - any_repository_has_fulltext
   - has_fulltext
   - is_retracted
   - is_paratext

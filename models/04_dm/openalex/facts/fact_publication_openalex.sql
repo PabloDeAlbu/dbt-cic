@@ -35,12 +35,14 @@ WITH base as (
         sat.publication_year,
         sat.publication_date,
         sat.updated_date,
-        sat.created_date
+        sat.created_date,
+        dim_accessright.is_oa
     FROM {{ref('sal_work_openalex')}} sal
     INNER JOIN {{ref('sat_work_openalex')}} sat ON sal.work_hk = sat.work_hk
     INNER JOIN {{ref('dim_pid_openalex')}} dim_pid ON dim_pid.work_hk = sal.work_hk
     INNER JOIN {{ref('link_work2type_openalex')}} link_work_type ON link_work_type.work_hk = sal.work_hk
     INNER JOIN {{ref('dim_resourcetype_openalex')}} dim_type ON dim_type.type_hk = link_work_type.type_hk
+    INNER JOIN {{ref('dim_accessright_openalex')}} dim_accessright ON dim_accessright.oa_status = sat.oa_status
 )
 
 SELECT * FROM base

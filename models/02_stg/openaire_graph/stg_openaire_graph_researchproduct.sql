@@ -14,6 +14,10 @@ hashed_columns:
   researchproduct2type_hk:
     - researchproduct_id
     - type
+  accessright_hk: best_access_right
+  researchproduct2accessright_hk:
+    - researchproduct_id
+    - best_access_right
   researchproduct_hashdiff:
     is_hashdiff: true
     columns:
@@ -27,6 +31,7 @@ hashed_columns:
       - language_code
       - language_label
       - best_access_right
+      - best_access_right_uri
       - citation_class
       - citation_count
       - impulse

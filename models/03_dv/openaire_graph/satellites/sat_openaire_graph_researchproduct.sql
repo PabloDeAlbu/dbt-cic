@@ -15,6 +15,7 @@ src_payload:
   - language_code
   - language_label
   - best_access_right
+  - best_access_right_uri
   - citation_class
   - citation_count
   - impulse

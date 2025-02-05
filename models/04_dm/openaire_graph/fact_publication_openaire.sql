@@ -16,7 +16,6 @@ WITH base as (
         sat_graph.is_in_diamond_journal,
         sat_graph.language_code,
         sat_graph.language_label,
-        sat_graph.best_access_right,
         sat_graph.citation_class,
         sat_graph.citation_count,
         sat_graph.impulse,
@@ -36,12 +35,15 @@ WITH base as (
         dim_pid.pmc,
         dim_pid.pmid,
         dim_type.openaire_type,
-        dim_type.coar_label_es
+        dim_type.coar_label_es,
+        dim_accessright.best_access_right
     FROM {{ref('hub_openaire_graph_researchproduct')}} hub
     INNER JOIN {{ref('sat_openaire_graph_researchproduct')}} sat_graph ON sat_graph.researchproduct_hk = hub.researchproduct_hk
     INNER JOIN {{ref('dim_pid_openaire_graph')}} dim_pid ON dim_pid.researchproduct_hk = hub.researchproduct_hk
     INNER JOIN {{ref('link_openaire_graph_researchproduct2type')}} link ON link.researchproduct_hk = hub.researchproduct_hk
     INNER JOIN {{ref('dim_resourcetype_openaire')}} dim_type ON dim_type.type_hk = link.type_hk
+    INNER JOIN {{ref('link_openaire_graph_researchproduct2accessright')}} link_accessright ON link_accessright.researchproduct_hk = hub.researchproduct_hk
+    INNER JOIN {{ref('dim_accessright_openaire')}} dim_accessright ON dim_accessright.accessright_hk = link_accessright.accessright_hk
 )
 
 SELECT * FROM base

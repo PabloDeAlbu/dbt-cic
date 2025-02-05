@@ -16,6 +16,7 @@ with source as (
         COALESCE({{ adapter.quote("language_code") }}::varchar, 'NO DATA') as language_code,
         COALESCE({{ adapter.quote("language_label") }}::varchar, 'NO DATA') as language_label,
         COALESCE({{ adapter.quote("bestAccessRight_label") }}::varchar, 'NO DATA') as best_access_right,
+        COALESCE({{ adapter.quote("bestAccessRight_scheme") }}::varchar, 'NO DATA') as best_access_right_uri,
         COALESCE({{ adapter.quote("citationImpact.citationClass") }}::varchar, 'NO DATA') as citation_class,
         COALESCE({{ adapter.quote("citationImpact.citationCount") }}::int , 0) as citation_count,        
         COALESCE({{ adapter.quote("citationImpact.impulse") }}::float, 0) as impulse,

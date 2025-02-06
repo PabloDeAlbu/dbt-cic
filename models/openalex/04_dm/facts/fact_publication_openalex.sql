@@ -15,6 +15,7 @@ WITH base as (
         dim_pid.pmid,
         dim_type.openalex_type,
         dim_type.coar_label_es,
+        dim_type.coar_resourcetype_uri,
         sat.title,
         sat.display_name,
         sat.language,

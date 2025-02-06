@@ -36,7 +36,9 @@ WITH base as (
         dim_pid.pmid,
         dim_type.openaire_type,
         dim_type.coar_label_es,
-        dim_accessright.best_access_right
+        dim_type.coar_resourcetype_uri,
+        dim_accessright.best_access_right,
+        dim_accessright.is_oa
     FROM {{ref('hub_openaire_graph_researchproduct')}} hub
     INNER JOIN {{ref('sat_openaire_graph_researchproduct')}} sat_graph ON sat_graph.researchproduct_hk = hub.researchproduct_hk
     INNER JOIN {{ref('dim_pid_openaire_graph')}} dim_pid ON dim_pid.researchproduct_hk = hub.researchproduct_hk

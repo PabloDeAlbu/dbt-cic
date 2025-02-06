@@ -32,39 +32,19 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   # Config indicated by + and applies to all files under models/example/
   dbt_unlp:
-    01_base:
-      +materialized: table
-      +schema: base
-    02_stg:
-      +materialized: view
-      coar:
-        +schema: coar
-      dspacedb:
-        +schema: dspacedb
-      oai:
-        +schema: oai
-      openaire:
-        +schema: openaire
-      openaire_graph:
-        +schema: openaire_graph
-      openalex:
-        +schema: openalex
-    03_dv:
-      +materialized: incremental
-      coar:
-        +schema: coar
-      dspacedb:
-        +schema: dspacedb
-      oai:
-        +schema: oai
-      openaire:
-        +schema: openaire
-      openaire_graph:
-        +schema: openaire_graph
-      openalex:
-        +schema: openalex
-    04_dm:
-      +materialized: table
+    +materialized: table
+    coar:
+      +schema: coar
+    dspacedb:
+      +schema: dspacedb
+    oai:
+      +schema: oai
+    openaire:
+      +schema: openaire
+    openaire_graph:
+      +schema: openaire_graph
+    openalex:
+      +schema: openalex
 
 seeds:
   dbt_unlp:

@@ -3,7 +3,6 @@ version: 2
 sources:
   - name: dspacedb
     description: 'DSpace database'
-    database: dw_cic
     schema: ldg_dspacedb
     tables:
       - name: bitstream

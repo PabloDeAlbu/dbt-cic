@@ -14,13 +14,15 @@ openalex as (
     SELECT
         openalex.work_id,
         openalex.title,
-        openalex.openalex_type, 
+        openalex.coar_label_es,
+        openalex.coar_resourcetype_uri,
         openalex.doi,
         openalex.fwci,
         openalex.cited_by_count as cited_by_count_openalex,
         openalex.locations_count as locations_count_openalex,
         openalex.referenced_works_count as referenced_works_count_openalex,
-        openalex.publication_year as publication_year_openalex
+        openalex.publication_year as publication_year_openalex,
+        openalex.is_oa as is_oa
     FROM {{ ref('fact_publication_openalex') }} openalex
 ),
 
@@ -28,7 +30,8 @@ openaire as (
     SELECT
         openaire.researchproduct_id,
         openaire.main_title,
-        openaire.openaire_type,
+        openaire.coar_label_es,
+        openaire.coar_resourcetype_uri,
         openaire.doi,
         openaire.citation_class as citation_class_openaire,
         openaire.citation_count as citation_count_openaire,
@@ -39,7 +42,8 @@ openaire as (
         openaire.popularity as popularity_openaire,
         openaire.popularity_class as popularity_class_openaire,
         openaire.downloads as downloads_openaire,
-        openaire.views as views_openaire
+        openaire.views as views_openaire,
+        openaire.is_oa as is_oa
     FROM {{ ref('fact_publication_openaire') }} openaire
 ),
 
@@ -47,7 +51,6 @@ fact as (
     SELECT
         openaire.researchproduct_id,
         openalex.work_id,
-        openaire_type,
         openaire.doi,
         openaire.citation_class_openaire,
         openaire.citation_count_openaire,
@@ -63,7 +66,10 @@ fact as (
         openalex.locations_count_openalex,
         openalex.referenced_works_count_openalex,
         openalex.publication_year_openalex,
-        COALESCE(openaire.main_title, openalex.title) as title
+        COALESCE(openaire.main_title, openalex.title) as title,
+        COALESCE(openaire.is_oa, openalex.is_oa) as is_oa,
+        COALESCE(openaire.coar_label_es, openalex.coar_label_es) as coar_label_es,
+        COALESCE(openaire.coar_resourcetype_uri, openalex.coar_resourcetype_uri) as coar_resourcetype_uri
     FROM openaire
     FULL OUTER JOIN openalex ON openalex.doi = openaire.doi
 )

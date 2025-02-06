@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: dspace5
+    description: 'DSpace 5 database'
+    schema: ldg_dspacedb
+    tables:
+      - name: item
+      - name: metadatafieldregistry
+      - name: metadataschemaregistry
+      - name: metadatavalue

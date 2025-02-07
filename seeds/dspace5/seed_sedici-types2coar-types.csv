@@ -1,0 +1,18 @@
+type,label_es,coar_uri
+Articulo,ARTÍCULO,http://purl.org/coar/resource_type/c_6501
+Artículo,ARTÍCULO,http://purl.org/coar/resource_type/c_6501
+Audio,SONIDO,http://purl.org/coar/resource_type/c_18cc
+Conjunto de datos,CONJUNTO DE DATOS,http://purl.org/coar/resource_type/c_ddb1
+Documento institucional,TEXTO,http://purl.org/coar/resource_type/c_18cf
+Imagen en movimiento,IMAGEN DINÁMICA,http://purl.org/coar/resource_type/c_8a7e
+Imagen fija,IMAGEN FIJA,http://purl.org/coar/resource_type/c_ecc8
+Libro,LIBRO,http://purl.org/coar/resource_type/c_2f33
+Objeto Fisico,OTROS,http://purl.org/coar/resource_type/c_1843
+Objeto de aprendizaje,OBJETO DE APRENDIZAJE,http://purl.org/coar/resource_type/c_e059
+Objeto de conferencia,CONTRIBUCIÓN DE CONGRESO,http://purl.org/coar/resource_type/c_c94f
+Proyecto,ENTREGABLE DE PROYECTO,http://purl.org/coar/resource_type/c_18op
+Publicacion seriada,OTRAS PUBLICACIONES PERIÓDICAS,http://purl.org/coar/resource_type/QX5C-AR31
+Publicación seriada,OTRAS PUBLICACIONES PERIÓDICAS,http://purl.org/coar/resource_type/QX5C-AR31
+Reporte,INFORME,http://purl.org/coar/resource_type/c_93fc
+Resumen,TEXTO,http://purl.org/coar/resource_type/c_18cf
+Tesis,TESIS,http://purl.org/coar/resource_type/c_46ec

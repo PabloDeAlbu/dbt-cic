@@ -35,6 +35,8 @@ models:
     +materialized: table
     coar:
       +schema: coar
+    dspace5:
+      +schema: dspace5
     dspacedb:
       +schema: dspacedb
     oai:

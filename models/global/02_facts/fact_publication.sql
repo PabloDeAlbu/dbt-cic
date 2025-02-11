@@ -14,6 +14,7 @@ openalex as (
     SELECT
         openalex.work_id,
         openalex.title,
+        openalex.publication_date,
         openalex.coar_label_es,
         openalex.coar_resourcetype_uri,
         openalex.doi,
@@ -32,6 +33,7 @@ openaire as (
     SELECT
         openaire.researchproduct_id,
         openaire.main_title,
+        openaire.publication_date,
         openaire.coar_label_es,
         openaire.coar_resourcetype_uri,
         openaire.handle,
@@ -58,20 +60,12 @@ fact as (
         openaire.researchproduct_id,
         openalex.work_id,
         openaire.doi,
-        openaire.citation_class_openaire,
-        openaire.citation_count_openaire,
-        openaire.impulse_openaire,
-        openaire.impulse_class_openaire,
-        openaire.influence_openaire,
-        openaire.influence_class_openaire,
-        openaire.popularity_openaire,
-        openaire.popularity_class_openaire,
         openaire.downloads_openaire,
         openaire.views_openaire,
-        openalex.cited_by_count_openalex,
         openalex.locations_count_openalex,
         openalex.referenced_works_count_openalex,
-        openalex.publication_year_openalex,
+        COALESCE(openaire.citation_count_openaire, openalex.cited_by_count_openalex) as citation_count,
+        COALESCE(openaire.publication_date, openalex.publication_date) as publication_date,
         COALESCE(openaire.main_title, openalex.title) as title,
         COALESCE(openaire.is_oa, openalex.is_oa) as is_oa,
         COALESCE(openalex.coar_label_es, openaire.coar_label_es) as coar_label_es,
@@ -79,7 +73,9 @@ fact as (
         COALESCE(openaire.in_openaire, openalex.in_openaire) as in_openaire,
         COALESCE(openalex.in_openalex, openaire.in_openalex) as in_openalex
     FROM openaire
-    FULL OUTER JOIN openalex ON openalex.doi = openaire.doi
+    FULL OUTER JOIN openalex ON openalex.doi = openaire.doi 
+        AND openalex.doi != 'NO DATA'  -- Evitar el join si el DOI es 'NO DATA'
+        AND openaire.doi != 'NO DATA'  -- Evitar el join si el DOI es 'NO DATA'
 )
 
 SELECT * FROM fact

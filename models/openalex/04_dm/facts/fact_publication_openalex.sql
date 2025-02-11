@@ -1,5 +1,5 @@
 {{ config(
-    materialized='materialized_view',
+    materialized='table',
     indexes=[
       {'columns': ['doi'], 'type': 'hash'},
     ]
@@ -20,8 +20,8 @@ WITH base as (
         sat.display_name,
         sat.language,
         sat.fulltext_origin,
-        sat.oa_status,
-        sat.oa_url,
+        {# sat.oa_status,
+        sat.oa_url, #}
         sat.cited_by_api_url,
         sat.any_repository_has_fulltext,
         sat.has_fulltext,

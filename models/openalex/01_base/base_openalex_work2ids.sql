@@ -40,7 +40,10 @@ fillna as (
 transformed as (
     select
         work_id,
-        split_part(doi, 'https://doi.org/', 2) as doi, -- Extraer solo el DOI
+        case
+            when doi != 'NO DATA' then split_part(doi, 'https://doi.org/', 2)
+            else doi
+        end as doi, -- Extraer solo el DOI si no es 'NO DATA'
         mag,
         pmcid,
         pmid,

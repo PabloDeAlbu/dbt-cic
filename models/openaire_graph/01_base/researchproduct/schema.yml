@@ -10,3 +10,4 @@ sources:
       - name: researchproduct2originalId
       - name: researchproduct2subject
       - name: researchproduct2pid
+      - name: researchproduct2url

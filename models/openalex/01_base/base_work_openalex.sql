@@ -18,7 +18,7 @@ renamed as (
         countries_distinct_count,
         institutions_distinct_count,
         fwci,
-        is_authors_truncated,
+--        is_authors_truncated,
         has_fulltext,
         fulltext_origin,
         cited_by_count,

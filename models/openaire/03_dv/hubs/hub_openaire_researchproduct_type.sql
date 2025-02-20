@@ -2,8 +2,8 @@
 
 {%- set yaml_metadata -%}
 source_model: 'stg_openaire_researchproduct'
-src_pk: researchproduct_hk
-src_nk: researchproduct_id
+src_pk: type_hk
+src_nk: type
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}

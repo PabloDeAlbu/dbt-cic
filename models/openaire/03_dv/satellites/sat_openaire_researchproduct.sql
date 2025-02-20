@@ -7,14 +7,28 @@ src_hashdiff:
   source_column: "researchproduct_hashdiff"
   alias: "hashdiff"
 src_payload:
-  - date_collection
-  - date_acceptance
-  - description
+  - publicly_funded
+  - main_title
+  - publication_date
+  - is_green
+  - is_in_diamond_journal
+  - language_code
+  - language_label
+  - best_access_right
+  - best_access_right_uri
+  - citation_class
+  - citation_count
+  - impulse
+  - impulse_class
+  - influence
+  - influence_class
+  - popularity
+  - popularity_class
+  - downloads
+  - views
   - publisher
-  - isgreen
-  - openaccesscolor
-  - isindiamondjournal
-  - publiclyfunded
+  - embargo_end_date
+  - load_datetime
 src_eff: "load_datetime"
 src_ldts: "load_datetime"
 src_source: "source"

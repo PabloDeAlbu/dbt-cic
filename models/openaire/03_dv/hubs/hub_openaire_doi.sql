@@ -1,9 +1,9 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: 'stg_openaire_researchproduct'
-src_pk: researchproduct_hk
-src_nk: researchproduct_id
+source_model: 'stg_openaire_researchproduct_doi'
+src_pk: doi_hk
+src_nk: doi
 src_ldts: load_datetime
 src_source: source
 {%- endset -%}

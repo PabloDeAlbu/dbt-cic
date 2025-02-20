@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: openaire
+    description: 'Research product collected from OpenAIRE Graph'
+    schema: ldg_openaire
+    tables:
+      - name: researchproduct
+      - name: map_researchproduct_author
+      - name: map_researchproduct_originalid
+      - name: map_researchproduct_subject
+      - name: map_researchproduct_pid
+      - name: map_researchproduct_url

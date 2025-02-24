@@ -3,10 +3,14 @@ with base as (
     researchproduct_id,
     scheme,
     value as doi,
-    load_datetime
+    load_datetime,
+    case
+      when not (value ~* '^10\.\d{4,9}/[-._;()/:a-zA-Z0-9]+$') then 'formato doi invalido'
+      else 'ok'
+    end as valid_reason
   from {{ ref('norm_openaire_researchproduct_pid')}}
   where scheme = 'doi'
-  AND value ~* '^10\.\d{4,9}/[-._;()/:a-zA-Z0-9]+$'  -- Solo mantiene DOIs válidos
+  and value ~* '^10\.\d{4,9}/[-._;()/:a-zA-Z0-9]+$'  -- Solo mantiene DOIs válidos
 ),
 
 unique_rp as (

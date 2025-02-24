@@ -3,7 +3,11 @@ with source as (
     researchproduct_id,
     scheme,
     value as pmid,
-    load_datetime
+    load_datetime,
+    case
+      when not (value ~* '^\d{7,8}$') then 'formato de pmid invalido'
+      else 'ok'
+    end as valid_reason
   from {{ ref('norm_openaire_researchproduct_pid')}}
   where scheme = 'pmid'
 )

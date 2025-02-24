@@ -3,7 +3,11 @@ with source as (
     researchproduct_id,
     scheme,
     value as mag,
-    load_datetime
+    load_datetime,
+    case
+      when not (value ~* '^\d{5,}$') then 'formato mag invalido'
+      else 'ok'
+    end as valid_reason
   from {{ ref('norm_openaire_researchproduct_pid')}}
   where scheme = 'mag_id'
 )

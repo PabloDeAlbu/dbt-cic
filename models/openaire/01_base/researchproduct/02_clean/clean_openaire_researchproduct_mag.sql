@@ -1,4 +1,4 @@
-with source as (
+with base as (
   select
     researchproduct_id,
     scheme,
@@ -12,4 +12,4 @@ with source as (
   where scheme = 'mag_id'
 )
 
-select * from source
+select * from base

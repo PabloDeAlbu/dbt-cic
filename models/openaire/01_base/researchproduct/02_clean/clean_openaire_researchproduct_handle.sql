@@ -1,4 +1,4 @@
-with source as (
+with base as (
   select 
     researchproduct_id,
     scheme,
@@ -14,4 +14,4 @@ with source as (
   -- and value like 'http%'
 )
 
-select * from source
+select * from base

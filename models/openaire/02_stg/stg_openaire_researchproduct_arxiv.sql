@@ -1,16 +1,16 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "norm_openaire_researchproduct_mag"
+source_model: "clean_openaire_researchproduct_arxiv"
 derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
   researchproduct_hk: researchproduct_id
-  mag_hk: mag
-  researchproduct_mag_hk:
+  arxiv_hk: arxiv
+  researchproduct_arxiv_hk:
     - researchproduct_id
-    - mag
+    - arxiv
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

@@ -28,6 +28,7 @@ src_payload:
   - views
   - publisher
   - embargo_end_date
+  - filter_applied
   - load_datetime
 src_eff: "load_datetime"
 src_ldts: "load_datetime"

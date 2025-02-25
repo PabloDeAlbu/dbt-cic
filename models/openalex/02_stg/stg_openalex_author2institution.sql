@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
-source_model: 'base_author2institution_openalex'
+source_model: 'base_openalex_author2institution'
 derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime

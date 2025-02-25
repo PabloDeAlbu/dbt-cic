@@ -1,26 +1,25 @@
 {{ config(materialized='table') }}
 
 {%- set yaml_metadata -%}
-source_model: 'base_work2source_openalex'
+source_model: "base_openalex_author"
 derived_columns:
   source: "!OPENALEX"
   load_datetime: load_datetime
 hashed_columns:
-  work_hk: work_id
-  source_hk: source_id
-  work_source_hk:
-    - work_id
-    - source_id
-  source_type_hk: source_type
-  work_source_type:
-    - work_id
-    - source_type
-  source_host_organization_hk: source_host_organization
-  work_source_host_organization:
-    - work_id
-    - source_host_organization
-  license_hk: license
-  version_hk: version
+  author_hk: author_id
+  orcid_hk: orcid
+  author2orcid_hk:
+  - author_id
+  - orcid
+  author_hashdiff:
+    is_hashdiff: true
+    columns:
+      - author_id
+      - orcid
+      - display_name
+      - works_count
+      - cited_by_count
+
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

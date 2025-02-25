@@ -7,7 +7,7 @@ WITH base AS (
             WHEN sat.oa_status = 'closed' THEN FALSE
             ELSE TRUE
         END AS is_oa
-    FROM {{ ref('sat_work_openalex') }} sat
+    FROM {{ ref('sat_openalex_work') }} sat
 )
 
 SELECT * FROM base

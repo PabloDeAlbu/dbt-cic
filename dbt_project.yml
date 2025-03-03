@@ -33,20 +33,21 @@ models:
   # Config indicated by + and applies to all files under models/example/
   dbt_unlp:
     +materialized: table
-    coar:
-      +schema: coar
-    dspace5:
-      +schema: dspace5
-    dspacedb:
-      +schema: dspacedb
-    oai:
-      +schema: oai
-    openaire:
-      +schema: openaire
-    openaire_graph:
-      +schema: openaire_graph
-    openalex:
-      +schema: openalex
+    dv:
+      coar:
+        +schema: coar
+      dspace5:
+        +schema: dspace5
+      dspacedb:
+        +schema: dspacedb
+      oai:
+        +schema: oai
+      openaire:
+        +schema: openaire
+      openaire_graph:
+        +schema: openaire_graph
+      openalex:
+        +schema: openalex
 
 seeds:
   dbt_unlp:

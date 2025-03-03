@@ -1,0 +1,1 @@
+{# SELECT * FROM {{ref('link_openalex_author_institution')}} #}

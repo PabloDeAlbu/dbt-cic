@@ -134,6 +134,7 @@ casted as (
     {{ dbt_date.convert_timezone("publication_date") }} as publication_date,
     {{ dbt_date.convert_timezone("updated_date") }} as updated_date,
     {{ dbt_date.convert_timezone("created_date") }} as created_date,
+    {{ dbt_date.convert_timezone("load_datetime") }} as load_datetime,
 
     -- openaeccess
     ---- varchar
@@ -142,31 +143,6 @@ casted as (
     ---- bool
     any_repository_has_fulltext::boolean,
     is_oa::boolean,
-    ---- int
-    ---- date
-
-    -- primary location
-    ---- varchar
-    primary_location_source::varchar,
-    primary_location_source_id::varchar,
-    primary_location_source_type::varchar,
-    primary_location_source_display_name::varchar,
-    primary_location_source_host_organization::varchar,
-    primary_location_source_host_organization_name::varchar,
-    primary_location_landing_page_url::varchar,
-    primary_location_license::varchar,
-    primary_location_license_id::varchar,
-    primary_location_pdf_url::varchar,
-    primary_location_version::varchar,
-    primary_location_source_issn_l::varchar,
-    ---- bool
-    primary_location_is_accepted::boolean,
-    primary_location_is_oa::boolean,
-    primary_location_is_published::boolean,
-    primary_location_source_is_core::boolean,
-    primary_location_source_is_in_doaj::boolean,
-    primary_location_source_is_indexed_in_scopus::boolean,
-    primary_location_source_is_oa::boolean,
     ---- int
     ---- date
 
@@ -211,19 +187,31 @@ casted as (
     ---- int
     ---- date
 
-    -- primary_topic
+    -- Location object. https://docs.openalex.org/api-entities/works/work-object/location-object
+
+    -- primary location
     ---- varchar
-    primary_topic_display_name::varchar,
-    primary_topic_id::varchar,
-    primary_topic_domain_display_name::varchar,
-    primary_topic_domain_id::varchar,
-    primary_topic_field_display_name::varchar,
-    primary_topic_field_id::varchar,
-    primary_topic_subfield_display_name::varchar,
-    primary_topic_subfield_id::varchar,
+    primary_location_source::varchar,
+    primary_location_source_id::varchar,
+    primary_location_source_type::varchar,
+    primary_location_source_display_name::varchar,
+    primary_location_source_host_organization::varchar,
+    primary_location_source_host_organization_name::varchar,
+    primary_location_landing_page_url::varchar,
+    primary_location_license::varchar,
+    primary_location_license_id::varchar,
+    primary_location_pdf_url::varchar,
+    primary_location_version::varchar,
+    primary_location_source_issn_l::varchar,
     ---- bool
+    primary_location_is_accepted::boolean,
+    primary_location_is_oa::boolean,
+    primary_location_is_published::boolean,
+    primary_location_source_is_core::boolean,
+    primary_location_source_is_in_doaj::boolean,
+    primary_location_source_is_indexed_in_scopus::boolean,
+    primary_location_source_is_oa::boolean,
     ---- int
-    primary_topic_score::int,
     ---- date
 
     -- best_oa_location
@@ -248,9 +236,22 @@ casted as (
     best_oa_location_source_is_in_doaj::boolean,
     best_oa_location_source_is_indexed_in_scopus::boolean,
     best_oa_location_source_is_oa::boolean,
+
+    -- primary_topic
+    ---- varchar
+    primary_topic_display_name::varchar,
+    primary_topic_id::varchar,
+    primary_topic_domain_display_name::varchar,
+    primary_topic_domain_id::varchar,
+    primary_topic_field_display_name::varchar,
+    primary_topic_field_id::varchar,
+    primary_topic_subfield_display_name::varchar,
+    primary_topic_subfield_id::varchar,
+    ---- bool
     ---- int
+    primary_topic_score::int
     ---- date
-    {{ dbt_date.convert_timezone("load_datetime") }} as load_datetime
+
 
   from renamed
 ),

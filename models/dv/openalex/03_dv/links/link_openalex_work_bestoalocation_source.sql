@@ -1,8 +1,8 @@
 {{ config(materialized='incremental') }}
 
-{%- set source_model = "stg_openalex_author_institution" -%}
-{%- set src_pk = "author_institution_hk" -%}
-{%- set src_fk = ["author_hk", "institution_hk"] -%}
+{%- set source_model = "stg_openalex_work_bestoalocation" -%}
+{%- set src_pk = "work_bestoalocation_hk" -%}
+{%- set src_fk = ["work_hk", "work_bestoalocation_hk"] -%}
 {%- set src_ldts = "load_datetime" -%}
 {%- set src_source = "source" -%}
 

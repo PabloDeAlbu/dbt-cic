@@ -21,4 +21,5 @@ sources:
       - name: map_work_primary_topics
       - name: map_work_referenced_works
       - name: map_work_location
+      - name: map_work_topics
       - name: worktype

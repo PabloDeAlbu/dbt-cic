@@ -7,30 +7,49 @@ src_hashdiff:
   source_column: "work_hashdiff"
   alias: "hashdiff"
 src_payload:
-  - work_id
-  - doi
   - title
   - display_name
   - language
   - type
+  - type_crossref
   - fulltext_origin
-  - oa_status
-  - oa_url
   - cited_by_api_url
-  - any_repository_has_fulltext
+  - doi
+  - mag
+  - openalex
+  - pmcid
+  - pmid
   - has_fulltext
   - is_retracted
   - is_paratext
-  - countries_distinct_count
   - institutions_distinct_count
   - fwci
   - cited_by_count
   - locations_count
   - referenced_works_count
+  - countries_distinct_count
   - publication_year
-  - publication_date
-  - updated_date
-  - created_date
+  - oa_status
+  - oa_url
+  - any_repository_has_fulltext
+  - is_oa
+  - apc_list_currency
+  - apc_list_provenance
+  - apc_list_value
+  - apc_list_value_usd
+  - apc_paid_currency
+  - apc_paid_provenance
+  - apc_paid_value
+  - apc_paid_value_usd
+  - citation_normalized_percentile_is_in_top_10_percent
+  - citation_normalized_percentile_is_in_top_1_percent
+  - citation_normalized_percentile_value
+  - cited_by_percentile_year_max
+  - cited_by_percentile_year_min
+  - biblio_first_page
+  - biblio_issue
+  - biblio_last_page
+  - biblio_volume
 src_eff: "load_datetime"
 src_ldts: "load_datetime"
 src_source: "source"

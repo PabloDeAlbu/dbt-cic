@@ -12,7 +12,13 @@ hashed_columns:
   author_institution_hk:
     - author_id
     - institution_id
-    - ror
+  institution_hashdiff:
+    is_hashdiff: true
+    columns:
+      - country_code
+      - display_name
+      - ror
+      - type
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

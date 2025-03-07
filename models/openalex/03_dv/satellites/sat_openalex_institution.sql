@@ -10,7 +10,6 @@ src_payload:
   - country_code
   - display_name
   - ror
-  - type
 src_eff: "load_datetime"
 src_ldts: "load_datetime"
 src_source: "source"

@@ -9,6 +9,9 @@ hashed_columns:
   author_hk: author_id
   institution_hk: institution_id
   ror_hk: ror
+  institution_ror_hk:
+    - institution_id
+    - ror
   author_institution_hk:
     - author_id
     - institution_id

@@ -41,6 +41,19 @@ fillna as (
         created_date,
         load_datetime
     from casted
+),
+
+transformed as (
+    select
+        author_id,
+        split_part(orcid, 'https://orcid.org/', 2) as orcid,
+        display_name,
+        works_count,
+        cited_by_count,
+        updated_date,
+        created_date,
+        load_datetime
+    from fillna
 )
 
-select * from fillna
+select * from transformed

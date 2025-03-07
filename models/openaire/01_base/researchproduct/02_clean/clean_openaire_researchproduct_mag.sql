@@ -8,7 +8,7 @@ with base as (
       when not (value ~* '^\d{5,}$') then 'formato mag invalido'
       else 'ok'
     end as valid_reason
-  from {{ ref('norm_openaire_researchproduct_pid')}}
+  from {{ ref('map_openaire_researchproduct_pid')}}
   where scheme = 'mag_id'
 )
 

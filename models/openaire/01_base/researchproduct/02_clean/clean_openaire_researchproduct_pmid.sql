@@ -8,7 +8,7 @@ with base as (
       when not (value ~* '^\d{7,8}$') then 'formato de pmid invalido'
       else 'ok'
     end as valid_reason
-  from {{ ref('norm_openaire_researchproduct_pid')}}
+  from {{ ref('map_openaire_researchproduct_pid')}}
   where scheme = 'pmid'
 )
 

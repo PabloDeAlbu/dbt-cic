@@ -1,23 +1,23 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "final_openaire_researchproduct_author"
+source_model: "map_openaire_researchproduct_author"
 derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime
 hashed_columns:
   researchproduct_hk: researchproduct_id
-  author_hk: author_id
-  researchproduct_author_hk:
+  orcid_hk: orcid
+  researchproduct_orcid_hk:
     - researchproduct_id
-    - pid
+    - orcid
   author_hashdiff:
     is_hashdiff: true
     columns:
       - researchproduct_id
       - full_name
       - name
-      - pid
+      - orcid
       - rank
       - surname
 

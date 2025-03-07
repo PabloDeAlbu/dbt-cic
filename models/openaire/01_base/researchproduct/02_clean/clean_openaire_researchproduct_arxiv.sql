@@ -12,7 +12,7 @@ with base as (
       then 'formato arxiv inválido'
       else 'ok'
     end as valid_reason
-  from {{ ref('norm_openaire_researchproduct_pid')}}
+  from {{ ref('map_openaire_researchproduct_pid')}}
   where scheme = 'arXiv'
 )
 

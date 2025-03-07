@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "norm_openaire_researchproduct"
+source_model: "base_openaire_researchproduct"
 derived_columns:
   source: "!OPENAIRE"
   load_datetime: load_datetime

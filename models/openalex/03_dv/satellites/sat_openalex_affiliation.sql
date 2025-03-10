@@ -1,16 +1,13 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: "stg_openalex_author"
-src_pk: "author_hk"
+source_model: "stg_openalex_author_affiliation"
+src_pk: "author_institution_hk"
 src_hashdiff:
-  source_column: "author_hashdiff"
+  source_column: "affiliation_hashdiff"
   alias: "hashdiff"
 src_payload:
-  - display_name
-  - works_count
-  - cited_by_count
-
+  - years
 src_eff: "load_datetime"
 src_ldts: "load_datetime"
 src_source: "source"

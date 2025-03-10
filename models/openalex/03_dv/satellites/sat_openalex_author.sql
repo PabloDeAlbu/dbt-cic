@@ -8,7 +8,6 @@ src_hashdiff:
   alias: "hashdiff"
 src_payload:
   - author_id
-  - orcid
   - display_name
   - works_count
   - cited_by_count

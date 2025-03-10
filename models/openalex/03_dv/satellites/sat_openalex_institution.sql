@@ -9,7 +9,6 @@ src_hashdiff:
 src_payload:
   - country_code
   - display_name
-  - ror
 src_eff: "load_datetime"
 src_ldts: "load_datetime"
 src_source: "source"
